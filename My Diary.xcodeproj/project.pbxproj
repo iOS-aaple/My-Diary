@@ -20,6 +20,7 @@
 		3F53ADA5294B6830001ED4C4 /* signUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F53ADA4294B6830001ED4C4 /* signUpViewController.swift */; };
 		3FE2486B294B286D007500DB /* MyAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FE2486A294B286D007500DB /* MyAccount.storyboard */; };
 		3FE2486D294B2CC3007500DB /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE2486C294B2CC3007500DB /* MyAccountViewController.swift */; };
+		E46D1EEF294B679C0017405A /* AddEdit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E46D1EEE294B679C0017405A /* AddEdit.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		3F53ADA4294B6830001ED4C4 /* signUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpViewController.swift; sourceTree = "<group>"; };
 		3FE2486A294B286D007500DB /* MyAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyAccount.storyboard; sourceTree = "<group>"; };
 		3FE2486C294B2CC3007500DB /* MyAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountViewController.swift; sourceTree = "<group>"; };
+		E46D1EEE294B679C0017405A /* AddEdit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddEdit.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 			children = (
 				3F1CA25B294B076600577F50 /* Main.storyboard */,
 				3FE2486A294B286D007500DB /* MyAccount.storyboard */,
+				E46D1EEE294B679C0017405A /* AddEdit.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F1CA262294B076800577F50 /* LaunchScreen.storyboard in Resources */,
+				E46D1EEF294B679C0017405A /* AddEdit.storyboard in Resources */,
 				3F1CA25F294B076800577F50 /* Assets.xcassets in Resources */,
 				3FE2486B294B286D007500DB /* MyAccount.storyboard in Resources */,
 				3F1CA25D294B076600577F50 /* Main.storyboard in Resources */,
