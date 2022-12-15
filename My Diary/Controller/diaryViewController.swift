@@ -20,7 +20,7 @@ class diaryViewController: UIViewController {
    
 
 }
-//
+
 
 extension diaryViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -29,7 +29,7 @@ extension diaryViewController: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "diaryCell", for: indexPath) as! diaryCell
-      //  cell.viewCell.layer.cornerRadius = 20
+       cell.viewCell.layer.cornerRadius = 20
         
         return cell
     }
