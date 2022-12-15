@@ -48,7 +48,7 @@
                                                             <color key="textColor" red="0.9448230863" green="0.8921335936" blue="0.84371334310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="down-arrow-2" translatesAutoresizingMaskIntoConstraints="NO" id="DO0-gw-xLS">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="left-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="DO0-gw-xLS">
                                                             <rect key="frame" x="15" y="15" width="24" height="99"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16 Dec" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VIK-tt-cTZ">
@@ -91,7 +91,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J9J-zK-oKJ">
                                 <rect key="frame" x="307" y="59" width="70" height="46"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hamburger" translatesAutoresizingMaskIntoConstraints="NO" id="6Kg-wh-m2u">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu" translatesAutoresizingMaskIntoConstraints="NO" id="6Kg-wh-m2u">
                                         <rect key="frame" x="3" y="3.6666666666666643" width="64" height="39"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="64" id="YKI-g5-h9j"/>
@@ -129,8 +129,8 @@
     </scenes>
     <resources>
         <image name="backgroundAccountView" width="738" height="1600"/>
-        <image name="down-arrow-2" width="512" height="512"/>
-        <image name="hamburger" width="512" height="512"/>
+        <image name="left-arrow" width="512" height="512"/>
+        <image name="menu" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
