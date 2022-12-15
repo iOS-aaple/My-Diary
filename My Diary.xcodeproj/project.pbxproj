@@ -99,10 +99,11 @@
 		3F1CA254294B076600577F50 /* My Diary */ = {
 			isa = PBXGroup;
 			children = (
+				3F1CA287294B07AE00577F50 /* Model */,
+				3F1CA286294B079C00577F50 /* Controller */,
+				3F1CA285294B078E00577F50 /* View */,
 				3F1CA255294B076600577F50 /* AppDelegate.swift */,
 				3F1CA257294B076600577F50 /* SceneDelegate.swift */,
-				3F1CA259294B076600577F50 /* ViewController.swift */,
-				3F1CA25B294B076600577F50 /* Main.storyboard */,
 				3F1CA25E294B076800577F50 /* Assets.xcassets */,
 				3F1CA260294B076800577F50 /* LaunchScreen.storyboard */,
 				3F1CA263294B076800577F50 /* Info.plist */,
@@ -125,6 +126,29 @@
 				3F1CA278294B076900577F50 /* My_DiaryUITestsLaunchTests.swift */,
 			);
 			path = "My DiaryUITests";
+			sourceTree = "<group>";
+		};
+		3F1CA285294B078E00577F50 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3F1CA25B294B076600577F50 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3F1CA286294B079C00577F50 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3F1CA259294B076600577F50 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3F1CA287294B07AE00577F50 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
