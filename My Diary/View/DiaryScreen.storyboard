@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Diary View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="diaryViewController" customModule="My_Diary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundAccountView" translatesAutoresizingMaskIntoConstraints="NO" id="HXE-es-rml">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LvN-0q-lgU">
+                                <rect key="frame" x="80" y="261" width="368" height="591"/>
+                                <color key="backgroundColor" red="0.96078431372549022" green="0.9137254901960784" blue="0.8666666666666667" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="H1G-gy-GYU">
+                                    <size key="itemSize" width="356" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="9VO-ZT-kwz" customClass="diaryCell" customModule="My_Diary" customModuleProvider="target">
+                                        <rect key="frame" x="6" y="0.0" width="356" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="eQ7-MC-WLJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="356" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" red="0.28627450980392155" green="0.28627450980392155" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="356" height="128"/>
+                                        <connections>
+                                            <outlet property="viewCell" destination="eQ7-MC-WLJ" id="6xY-mM-NcP"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HXE-es-rml" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="5Qq-qh-ECp"/>
+                            <constraint firstItem="LvN-0q-lgU" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="80" id="LUA-NX-UKA"/>
+                            <constraint firstAttribute="bottom" secondItem="HXE-es-rml" secondAttribute="bottom" id="PhP-Ro-l5i"/>
+                            <constraint firstAttribute="bottom" secondItem="LvN-0q-lgU" secondAttribute="bottom" id="QZD-eD-6XH"/>
+                            <constraint firstItem="HXE-es-rml" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="WoQ-TX-CTt"/>
+                            <constraint firstItem="LvN-0q-lgU" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="202" id="dAs-MJ-Rjs"/>
+                            <constraint firstItem="HXE-es-rml" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="wAx-0h-TG7"/>
+                            <constraint firstAttribute="trailing" secondItem="LvN-0q-lgU" secondAttribute="trailing" constant="-55" id="zrS-Wz-2Nf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="LvN-0q-lgU" id="6Dr-Y0-Tuf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.53435114503816" y="-34.507042253521128"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="backgroundAccountView" width="738" height="1600"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
