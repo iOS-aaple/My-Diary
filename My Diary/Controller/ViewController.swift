@@ -8,10 +8,17 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var userNameTextFilde: UITextField!
+    @IBOutlet weak var passwordTextFilde: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+    }
+    @IBAction func singUpButton(_ sender: Any) {
+    }
+   
+    
+    @IBAction func loginButton(_ sender: Any) {
     }
 
 
