@@ -19,6 +19,8 @@
 		3F1CA289294B0A3700577F50 /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1CA288294B0A3700577F50 /* model.swift */; };
 		3FE2486B294B286D007500DB /* MyAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FE2486A294B286D007500DB /* MyAccount.storyboard */; };
 		3FE2486D294B2CC3007500DB /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE2486C294B2CC3007500DB /* MyAccountViewController.swift */; };
+		E46D1EEF294B679C0017405A /* AddEdit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E46D1EEE294B679C0017405A /* AddEdit.storyboard */; };
+		E46D1EF1294B67DD0017405A /* AddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46D1EF0294B67DD0017405A /* AddEditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		3F1CA288294B0A3700577F50 /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
 		3FE2486A294B286D007500DB /* MyAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyAccount.storyboard; sourceTree = "<group>"; };
 		3FE2486C294B2CC3007500DB /* MyAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountViewController.swift; sourceTree = "<group>"; };
+		E46D1EEE294B679C0017405A /* AddEdit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddEdit.storyboard; sourceTree = "<group>"; };
+		E46D1EF0294B67DD0017405A /* AddEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,7 @@
 			children = (
 				3F1CA25B294B076600577F50 /* Main.storyboard */,
 				3FE2486A294B286D007500DB /* MyAccount.storyboard */,
+				E46D1EEE294B679C0017405A /* AddEdit.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -146,6 +151,7 @@
 		3F1CA286294B079C00577F50 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E46D1EF0294B67DD0017405A /* AddEditViewController.swift */,
 				3F1CA259294B076600577F50 /* ViewController.swift */,
 				3FE2486C294B2CC3007500DB /* MyAccountViewController.swift */,
 			);
@@ -265,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F1CA262294B076800577F50 /* LaunchScreen.storyboard in Resources */,
+				E46D1EEF294B679C0017405A /* AddEdit.storyboard in Resources */,
 				3F1CA25F294B076800577F50 /* Assets.xcassets in Resources */,
 				3FE2486B294B286D007500DB /* MyAccount.storyboard in Resources */,
 				3F1CA25D294B076600577F50 /* Main.storyboard in Resources */,
@@ -294,6 +301,7 @@
 			files = (
 				3F1CA25A294B076600577F50 /* ViewController.swift in Sources */,
 				3F1CA256294B076600577F50 /* AppDelegate.swift in Sources */,
+				E46D1EF1294B67DD0017405A /* AddEditViewController.swift in Sources */,
 				3FE2486D294B2CC3007500DB /* MyAccountViewController.swift in Sources */,
 				3F1CA258294B076600577F50 /* SceneDelegate.swift in Sources */,
 				3F1CA289294B0A3700577F50 /* model.swift in Sources */,
