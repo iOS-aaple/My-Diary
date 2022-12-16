@@ -23,6 +23,7 @@
 		84DBF84D294BC749005FF46F /* diaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DBF84C294BC749005FF46F /* diaryViewController.swift */; };
 		84DBF84F294BC7F5005FF46F /* diaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DBF84E294BC7F5005FF46F /* diaryCell.swift */; };
 		84DBF851294BC830005FF46F /* DiaryScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84DBF850294BC830005FF46F /* DiaryScreen.storyboard */; };
+		84DBF853294C02B4005FF46F /* menuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DBF852294C02B4005FF46F /* menuViewController.swift */; };
 		E46D1EEF294B679C0017405A /* AddEdit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E46D1EEE294B679C0017405A /* AddEdit.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		84DBF84C294BC749005FF46F /* diaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = diaryViewController.swift; sourceTree = "<group>"; };
 		84DBF84E294BC7F5005FF46F /* diaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = diaryCell.swift; sourceTree = "<group>"; };
 		84DBF850294BC830005FF46F /* DiaryScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DiaryScreen.storyboard; sourceTree = "<group>"; };
+		84DBF852294C02B4005FF46F /* menuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuViewController.swift; sourceTree = "<group>"; };
 		E46D1EEE294B679C0017405A /* AddEdit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddEdit.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,6 +165,7 @@
 				3FE2486C294B2CC3007500DB /* MyAccountViewController.swift */,
 				84DBF84C294BC749005FF46F /* diaryViewController.swift */,
 				84DBF84E294BC7F5005FF46F /* diaryCell.swift */,
+				84DBF852294C02B4005FF46F /* menuViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84DBF853294C02B4005FF46F /* menuViewController.swift in Sources */,
 				3F1CA25A294B076600577F50 /* ViewController.swift in Sources */,
 				3F1CA256294B076600577F50 /* AppDelegate.swift in Sources */,
 				3F53ADA5294B6830001ED4C4 /* signUpViewController.swift in Sources */,
