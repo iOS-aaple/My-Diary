@@ -16,13 +16,21 @@ class diaryViewController: UIViewController {
     @IBOutlet weak var trailingMenuConstant: NSLayoutConstraint!
     
     var menuVC: menuViewController?
+    var isMenuShown = false
     override func viewDidLoad() {
         super.viewDidLoad()
-            collectionView.delegate = self
-            collectionView.dataSource = self
-        
-            backgroundView.isHidden = true
+           setUI()
         }
+    
+    private func setUI(){
+        collectionView.delegate = self
+        collectionView.dataSource = self
+    
+        backgroundView.isHidden = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tappingToBackView))
+        tap.numberOfTapsRequired = 1
+        view.addGestureRecognizer(tap)
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "sideMenu")
@@ -35,15 +43,44 @@ class diaryViewController: UIViewController {
         }
     }
     
+    @objc func tappingToBackView(){
+        hiddeMenuView()
+    }
+    
     private func hiddeMenuView(){
-        self.backgroundView.isHidden = true
-        self.trailingMenuConstant.constant = 190
-        
+
+        UIView.animate(withDuration: 0.1) {
+            self.trailingMenuConstant.constant = 10
+            self.view.layoutIfNeeded()
+        } completion: { (status) in
+            self.backgroundView.alpha = 0.0
+            UIView.animate(withDuration: 0.1) {
+                self.trailingMenuConstant.constant = 190
+                self.view.layoutIfNeeded()
+            } completion: { (status) in
+                self.backgroundView.isHidden = true
+                self.isMenuShown = false
+            }
+        }
     }
     
     @IBAction func presentMenu(_ sender: UIButton){
-        backgroundView.isHidden = false
-        trailingMenuConstant.constant = 0
+        UIView.animate(withDuration: 0.1) {
+            self.trailingMenuConstant.constant = 10
+            self.view.layoutIfNeeded()
+        } completion: { (status) in
+            self.backgroundView.alpha = 0.75
+            self.backgroundView.isHidden = false
+            UIView.animate(withDuration: 0.1) {
+                self.trailingMenuConstant.constant = 0
+                self.view.layoutIfNeeded()
+            } completion: { (status) in
+                self.isMenuShown = true
+            }
+
+        }
+
+        self.backgroundView.isHidden = false
     }
     
     
