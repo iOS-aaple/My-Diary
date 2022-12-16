@@ -130,7 +130,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="bYn-Yf-TwD"/>
                     <connections>
+                        <outlet property="loginButtonOutlet" destination="auJ-HG-Sly" id="hV4-fm-X0a"/>
+                        <outlet property="passwordImage" destination="XVw-qu-oF5" id="S0a-Oo-QJg"/>
                         <outlet property="passwordTextFilde" destination="hxb-v3-vAC" id="wl0-9F-aUs"/>
+                        <outlet property="signUpOutlet" destination="xXf-rP-SXH" id="SV1-6G-QuD"/>
+                        <outlet property="userImage" destination="7xt-ud-vXh" id="Bab-Mz-cHM"/>
                         <outlet property="userNameTextFilde" destination="1u9-Ca-SvC" id="iIc-IA-ZVc"/>
                     </connections>
                 </viewController>
@@ -268,9 +272,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="rcY-Xb-dVo"/>
                     <connections>
+                        <outlet property="calenderImage" destination="ZGh-AN-4Mv" id="xNO-zW-2Cc"/>
                         <outlet property="dateOfBirthTextField" destination="Cv4-jB-Kmh" id="qGr-R7-mfE"/>
+                        <outlet property="emailImage" destination="9nL-fY-wFK" id="qbm-0v-pk4"/>
                         <outlet property="emailTextField" destination="POz-Om-eHf" id="pDi-lu-Snn"/>
                         <outlet property="newPasswordTextField" destination="N15-TJ-xTU" id="5ab-ft-e0U"/>
+                        <outlet property="pass1Image" destination="ra2-9h-lbP" id="fJm-ko-V5m"/>
+                        <outlet property="pass2Image" destination="rvJ-Cg-E8G" id="stn-Io-m7Q"/>
+                        <outlet property="profileImage" destination="KuA-g7-NdI" id="i5J-OY-eiA"/>
                         <outlet property="reWritePasswordTextField" destination="OAC-2X-MTg" id="U5c-X4-edO"/>
                         <outlet property="userNameTextField" destination="2h1-yN-0Ki" id="xwo-jA-pkt"/>
                     </connections>
