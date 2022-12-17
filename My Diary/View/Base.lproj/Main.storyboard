@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oIM-Vi-JJm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qao-Hh-VXc">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -427,6 +427,48 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xqb-Bd-H1T">
+                                <rect key="frame" x="75" y="358" width="240" height="353"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="8UU-XX-xBs">
+                                        <rect key="frame" x="8" y="8" width="224" height="337"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty" translatesAutoresizingMaskIntoConstraints="NO" id="Bk6-Ug-8dR">
+                                                <rect key="frame" x="0.0" y="0.0" width="224" height="161.66666666666666"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add your first diary" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iMj-At-xVs">
+                                                <rect key="frame" x="0.0" y="186.66666666666663" width="224" height="23"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="19"/>
+                                                <color key="textColor" white="0.21088435374149661" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Relax and write something beautiful" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m15-u9-G9Q">
+                                                <rect key="frame" x="0.0" y="234.66666666666663" width="224" height="43"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <color key="textColor" red="0.40781933069999998" green="0.40781933069999998" blue="0.40781933069999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rm9-Q9-c8Z">
+                                                <rect key="frame" x="0.0" y="302.66666666666663" width="224" height="34.333333333333314"/>
+                                                <color key="backgroundColor" red="0.90980392160000001" green="0.36470588240000001" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" red="0.90946955090000003" green="0.86212328680000005" blue="0.81766992230000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="gray" title="Add Diary"/>
+                                                <connections>
+                                                    <action selector="addDiary:" destination="Qao-Hh-VXc" eventType="touchUpInside" id="vBm-Uu-Ot1"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="8UU-XX-xBs" firstAttribute="top" secondItem="xqb-Bd-H1T" secondAttribute="top" constant="8" id="4yg-Ct-2Wj"/>
+                                    <constraint firstAttribute="height" constant="353" id="8qE-8g-MHs"/>
+                                    <constraint firstAttribute="bottom" secondItem="8UU-XX-xBs" secondAttribute="bottom" constant="8" id="VgB-hs-doK"/>
+                                    <constraint firstAttribute="trailing" secondItem="8UU-XX-xBs" secondAttribute="trailing" constant="8" id="gaL-wj-8xb"/>
+                                    <constraint firstItem="8UU-XX-xBs" firstAttribute="leading" secondItem="xqb-Bd-H1T" secondAttribute="leading" constant="8" id="rvw-wl-mFL"/>
+                                </constraints>
+                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Kdq-sw-V04">
                                 <rect key="frame" x="61" y="269" width="384" height="575"/>
                                 <color key="backgroundColor" red="0.9448230863" green="0.8921335936" blue="0.84371334310000001" alpha="0.14569536420000001" colorSpace="custom" customColorSpace="sRGB"/>
@@ -447,7 +489,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="330" height="128"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="my diary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epJ-VJ-KFL">
-                                                            <rect key="frame" x="62" y="15" width="243" height="21"/>
+                                                            <rect key="frame" x="62" y="14.999999999999998" width="243" height="20.333333333333329"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="243" id="L1H-H7-ghL"/>
                                                             </constraints>
@@ -459,7 +501,7 @@
                                                             <rect key="frame" x="15" y="15" width="24" height="99"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16 Dec" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THm-pQ-IK3">
-                                                            <rect key="frame" x="215" y="15" width="73" height="21"/>
+                                                            <rect key="frame" x="215" y="14.999999999999998" width="73" height="20.333333333333329"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="73" id="drA-ra-hlF"/>
                                                             </constraints>
@@ -533,7 +575,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="9n6-qo-WoX" firstAttribute="leading" secondItem="2Mk-9t-0L2" secondAttribute="leading" id="2RC-GD-H74"/>
+                            <constraint firstItem="xqb-Bd-H1T" firstAttribute="leading" secondItem="2Mk-9t-0L2" secondAttribute="leading" constant="75" id="HCj-0v-8gi"/>
                             <constraint firstItem="Kdq-sw-V04" firstAttribute="top" secondItem="2Mk-9t-0L2" secondAttribute="top" constant="222" id="IJD-0m-Fh7"/>
+                            <constraint firstItem="2Mk-9t-0L2" firstAttribute="bottom" secondItem="xqb-Bd-H1T" secondAttribute="bottom" constant="99" id="Ii5-fV-21J"/>
                             <constraint firstItem="AjI-5G-xPX" firstAttribute="trailing" secondItem="2Mk-9t-0L2" secondAttribute="trailing" constant="190" id="Nj3-CE-7mS"/>
                             <constraint firstItem="m03-T0-ICT" firstAttribute="top" secondItem="2Mk-9t-0L2" secondAttribute="top" constant="30" id="PhY-kJ-fxq"/>
                             <constraint firstItem="2Mk-9t-0L2" firstAttribute="top" secondItem="dpa-51-WWA" secondAttribute="top" id="S80-2d-hQP"/>
@@ -545,21 +589,24 @@
                             <constraint firstItem="9n6-qo-WoX" firstAttribute="trailing" secondItem="2Mk-9t-0L2" secondAttribute="trailing" constant="400" id="kCT-mw-F0m"/>
                             <constraint firstItem="9n6-qo-WoX" firstAttribute="top" secondItem="3RU-yL-b8S" secondAttribute="top" id="m6f-TV-iZw"/>
                             <constraint firstAttribute="bottom" secondItem="Kdq-sw-V04" secondAttribute="bottom" id="qOM-47-SMl"/>
+                            <constraint firstItem="2Mk-9t-0L2" firstAttribute="trailing" secondItem="xqb-Bd-H1T" secondAttribute="trailing" constant="75" id="zCY-ia-NKz"/>
                             <constraint firstAttribute="bottom" secondItem="9n6-qo-WoX" secondAttribute="bottom" id="zCi-hW-Zd1"/>
                             <constraint firstItem="2Mk-9t-0L2" firstAttribute="top" secondItem="AjI-5G-xPX" secondAttribute="top" id="ziF-Nb-bmf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LbE-sX-Jmf"/>
                     <connections>
+                        <outlet property="addDiaryButton" destination="Rm9-Q9-c8Z" id="irw-EU-8EA"/>
                         <outlet property="backgroundView" destination="9n6-qo-WoX" id="3rz-rQ-3bG"/>
                         <outlet property="collectionView" destination="Kdq-sw-V04" id="7Ux-bW-Ypg"/>
+                        <outlet property="emptyView" destination="xqb-Bd-H1T" id="dXC-TQ-7Ze"/>
                         <outlet property="menuView" destination="AjI-5G-xPX" id="rYm-dA-Q3z"/>
                         <outlet property="trailingMenuConstant" destination="Nj3-CE-7mS" id="zB2-Ky-XZR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5NE-d5-KTv" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2860" y="10"/>
+            <point key="canvasLocation" x="2860" y="9.9526066350710902"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="udI-sg-qED">
@@ -748,7 +795,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="F6G-NW-iYr">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="E9Y-oH-4cQ">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="KDM-2a-V46">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="KDM-2a-V46">
                                 <rect key="frame" x="288" y="3" width="86" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
@@ -806,6 +853,7 @@
         <image name="backgroundAccountView" width="738" height="1600"/>
         <image name="bloom" width="1600" height="1600"/>
         <image name="editAccountIcon" width="24" height="24"/>
+        <image name="empty" width="512" height="512"/>
         <image name="index" width="738" height="1600"/>
         <image name="index 1" width="220" height="225"/>
         <image name="left-arrow" width="512" height="512"/>
