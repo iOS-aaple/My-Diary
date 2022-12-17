@@ -85,9 +85,9 @@
                                 <rect key="frame" x="170" y="224.33333333333334" width="199" height="34.333333333333343"/>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="je2-so-Iiz" userLabel="editButton">
-                                <rect key="frame" x="329" y="67" width="48" height="38"/>
+                                <rect key="frame" x="10" y="69" width="48" height="38"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="editAccountIcon" imagePadding="-2"/>
+                                <buttonConfiguration key="configuration" style="plain" image="backIcon" imagePadding="-2"/>
                                 <connections>
                                     <action selector="editBtnAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="LO9-Im-Hc7"/>
                                 </connections>
@@ -97,18 +97,18 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Rhz-Ta-xuk" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="188" id="5t7-Uj-Keg"/>
+                            <constraint firstItem="je2-so-Iiz" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="H39-Tn-YkX"/>
                             <constraint firstItem="q4C-eg-B74" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="LEA-mH-i1u"/>
                             <constraint firstItem="x4R-oY-ttt" firstAttribute="leading" secondItem="pCI-Oq-pLq" secondAttribute="leading" id="LKg-DW-NjS"/>
+                            <constraint firstItem="je2-so-Iiz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="Nka-vq-wF9"/>
                             <constraint firstItem="q4C-eg-B74" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="OXU-nB-qIi"/>
                             <constraint firstItem="fEn-t3-RR7" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="55" id="Pwj-GN-Pu1"/>
                             <constraint firstItem="Rhz-Ta-xuk" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="170" id="PxF-F1-JQR"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="je2-so-Iiz" secondAttribute="trailing" constant="16" id="V50-We-J34"/>
                             <constraint firstItem="fEn-t3-RR7" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Vub-YO-m0S"/>
                             <constraint firstItem="fEn-t3-RR7" firstAttribute="trailing" secondItem="q4C-eg-B74" secondAttribute="trailing" id="XZq-PX-bmw"/>
                             <constraint firstItem="pCI-Oq-pLq" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="40" id="ZC1-kP-7c3"/>
                             <constraint firstItem="Rhz-Ta-xuk" firstAttribute="trailing" secondItem="pCI-Oq-pLq" secondAttribute="trailing" id="aX0-77-xJ0"/>
                             <constraint firstItem="Qx9-d6-Uq4" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="170" id="da6-VS-vWk"/>
-                            <constraint firstItem="je2-so-Iiz" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="8" id="eLv-J5-qp3"/>
                             <constraint firstItem="Rhz-Ta-xuk" firstAttribute="top" secondItem="x4R-oY-ttt" secondAttribute="bottom" constant="20" id="ePt-O8-Ncp"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="fEn-t3-RR7" secondAttribute="bottom" constant="34" id="iN4-JM-xZM"/>
                             <constraint firstItem="Qx9-d6-Uq4" firstAttribute="top" secondItem="Rhz-Ta-xuk" secondAttribute="bottom" constant="16" id="jId-Y0-s33"/>
@@ -135,8 +135,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="backIcon" width="24" height="24"/>
         <image name="backgroundAccountView" width="738" height="1600"/>
-        <image name="editAccountIcon" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

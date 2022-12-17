@@ -38,6 +38,10 @@ class AddEditViewController: UIViewController {
     
     // MARK: edit Changes Functionality 
     @IBAction func editBtnAction(_ sender: Any) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let loginView = storyBoard.instantiateViewController(withIdentifier: "homeDiary")
+        loginView.modalPresentationStyle = .fullScreen
+        present(loginView, animated: true)
     }
     
 }

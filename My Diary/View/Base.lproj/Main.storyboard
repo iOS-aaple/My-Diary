@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qao-Hh-VXc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nYm-wK-fMj">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -457,6 +457,9 @@
                                                 <color key="tintColor" red="0.90980392160000001" green="0.86274509799999999" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="gray" title="Add Diary"/>
+                                                <connections>
+                                                    <segue destination="I9e-ta-Suw" kind="modal" modalPresentationStyle="fullScreen" id="Sqz-KA-zZj"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -724,7 +727,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="51z-8v-jf7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4124" y="-97"/>
+            <point key="canvasLocation" x="4082" y="440"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="d0b-5a-6pn">
@@ -943,6 +946,9 @@
             <point key="canvasLocation" x="2698.4615384615386" y="786.96682464454977"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Sqz-KA-zZj"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Facebook_Logo_(2019)" width="1200" height="1200"/>
         <image name="Untitled_Artwork 2" width="1179" height="2556"/>
