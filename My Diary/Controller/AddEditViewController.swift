@@ -1,4 +1,4 @@
-//
+
 //  AddEditViewController.swift
 //  My Diary
 //
@@ -24,13 +24,24 @@ class AddEditViewController: UIViewController {
     
     @IBOutlet weak var deleteDiary: UIButton!
     
+    @IBOutlet weak var backBtn: UIButton!
+    
     // MARK: Vars
     var isEdited = false
+    var diaryId:String?
+    var DTitel:String?
+    var content:String?
+    var userId: String?
+    
+    let dataFormatter = DateFormatter()
     
     
     func check(){
-        if isEdited == false {
+        if isEdited {
+            deleteDiary.isHidden = false
             
+        } else {
+            deleteDiary.isHidden = true
         }
     }
     
@@ -42,16 +53,72 @@ class AddEditViewController: UIViewController {
         saveChangesBtn.layer.cornerRadius = 20
         deleteDiary.layer.cornerRadius = 20
         
+        // MARK:
+        dataFormatter.dateFormat = "dd MMM yyyy"
+        
+
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        check()
+    }
+    
+    // MARK: bbb
+    func deletePost(){
+        
+        posts.deletePost(id: diaryId!) { data, response, error in
+            let httpRespons = response as! HTTPURLResponse
+            
+            print(httpRespons.statusCode)
+        }
+    }
+    
+    func editPost(){
+        
+        posts.updatePost(id: diaryId!, ownerId: userId!, title: addTitle.text!, created_At: dataFormatter.string(from: Date()), content: noteTextField.text!) { data, respons, error in
+            do{
+                let httpResponse = respons as! HTTPURLResponse
+                DispatchQueue.main.async {
+                    if httpResponse.statusCode == 200 {
+                        print(httpResponse.statusCode)
+                    }
+                }
+            }
+        }
+    }
+    
+    func addNewPost(){
+        
+        posts.AddNewPost(ownerId: "111", title: addTitle.text!, created_At: dataFormatter.string(from: Date()), content: noteTextField.text!) { data, respons, error in
+            do{
+                let httpResponse = respons as! HTTPURLResponse
+                DispatchQueue.main.async {
+                    if httpResponse.statusCode == 200 {
+                        print(httpResponse.statusCode)
+                    }
+                }
+            }
+        }
+    }
     
     // MARK: save Changes Functionality
     @IBAction func saveBtnAction(_ sender: Any) {
-        
+        if isEdited{
+            editPost()
+            isEdited = false
+        } else{
+            addNewPost()
+        }
     }
     
-    // MARK: edit Changes Functionality 
-    @IBAction func editBtnAction(_ sender: Any) {
+    // MARK: delete Button Action
+    
+    @IBAction func deleteDiaryAction(_ sender: Any) {
+        deletePost()
+    }
+    
+    // MARK: back Changes Functionality
+    @IBAction func backBtnAction(_ sender: Any) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let loginView = storyBoard.instantiateViewController(withIdentifier: "homeDiary")
         loginView.modalPresentationStyle = .fullScreen

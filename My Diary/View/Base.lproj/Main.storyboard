@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nYm-wK-fMj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gjy-o3-W8z">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -283,7 +283,7 @@
                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mail.stack" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9nL-fY-wFK">
-                                <rect key="frame" x="58" y="327" width="24" height="20.666666666666629"/>
+                                <rect key="frame" x="58" y="327" width="24" height="20.666666666666657"/>
                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="1ad-eR-Qkk">
@@ -466,9 +466,6 @@
                                                 <color key="tintColor" red="0.90980392160000001" green="0.86274509799999999" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="gray" title="Add Diary"/>
-                                                <connections>
-                                                    <segue destination="I9e-ta-Suw" kind="modal" modalPresentationStyle="fullScreen" id="Sqz-KA-zZj"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -678,9 +675,6 @@
                                         <state key="normal" title="New Diary" image="square.and.pencil" catalog="system">
                                             <color key="titleColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <segue destination="I9e-ta-Suw" kind="modal" identifier="NewDiary" modalPresentationStyle="fullScreen" id="D3r-3t-n7O"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCP-lg-nsn">
                                         <rect key="frame" x="0.0" y="136.66666666666666" width="158" height="34.333333333333343"/>
@@ -730,16 +724,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fsl-2H-s20" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4082" y="-207"/>
-        </scene>
-        <!--AddEdit-->
-        <scene sceneID="khr-xQ-TbP">
-            <objects>
-                <viewControllerPlaceholder storyboardName="AddEdit" id="I9e-ta-Suw" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="BnV-ZE-Thv"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="51z-8v-jf7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4082" y="440"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="d0b-5a-6pn">
@@ -815,7 +799,6 @@
                                 <buttonConfiguration key="configuration" style="plain" image="editAccountIcon"/>
                                 <connections>
                                     <action selector="editButton:" destination="bsd-Wm-aPY" eventType="touchUpInside" id="6QI-ej-f0g"/>
-                                    <segue destination="eyD-RK-pU2" kind="push" id="k62-UE-qhk"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -830,16 +813,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfV-7O-zTj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1306.1538461538462" y="778.43601895734594"/>
-        </scene>
-        <!--AddEdit-->
-        <scene sceneID="xpp-FB-Qvc">
-            <objects>
-                <viewControllerPlaceholder storyboardName="AddEdit" id="eyD-RK-pU2" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="iDT-7G-lIu"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mNA-OM-J31" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1878" y="653"/>
         </scene>
         <!--Forget Password View Controller-->
         <scene sceneID="Q2g-v3-ABR">
@@ -957,10 +930,128 @@
             </objects>
             <point key="canvasLocation" x="2698.4615384615386" y="786.96682464454977"/>
         </scene>
+        <!--Add Edit View Controller-->
+        <scene sceneID="xPz-Ko-z9U">
+            <objects>
+                <viewController storyboardIdentifier="AddEdit" id="Gjy-o3-W8z" customClass="AddEditViewController" customModule="My_Diary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R4d-MQ-xuq">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backgroundAccountView" translatesAutoresizingMaskIntoConstraints="NO" id="UhF-1j-7vE">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iid-v1-qeE" userLabel="noteView">
+                                <rect key="frame" x="55" y="280" width="338" height="488"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bloom" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ufc-v0-rvw">
+                                        <rect key="frame" x="24" y="20" width="290" height="20.333333333333329"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="How do you feel today?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HsT-AG-hyi">
+                                        <rect key="frame" x="16" y="60" width="306" height="388"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lPJ-Wq-D6I">
+                                        <rect key="frame" x="-34" y="432" width="75" height="57"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.25882352939999997" green="0.26078203319999999" blue="0.26078203319999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Save" cornerStyle="capsule">
+                                            <color key="baseForegroundColor" red="0.90980392160000001" green="0.36470588240000001" blue="0.33725490200000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="saveBtnAction:" destination="Gjy-o3-W8z" eventType="touchUpInside" id="f7c-hI-Fac"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.92063301799999997" green="0.3776196241" blue="0.3411375284" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a new title " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1y5-HH-MYd">
+                                <rect key="frame" x="170" y="134" width="188" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bloom Titile" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Os6-nZ-DFx">
+                                <rect key="frame" x="170" y="99" width="183" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bloom Date" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1X-zV-Cbm">
+                                <rect key="frame" x="170" y="188" width="183" height="20.333333333333343"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="u0l-YX-gbj">
+                                <rect key="frame" x="170" y="224.33333333333334" width="199" height="34.333333333333343"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOO-Fy-Yi3" userLabel="editButton">
+                                <rect key="frame" x="329" y="50" width="48" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="editAccountIcon" imagePadding="-2"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgl-pj-lsf">
+                                <rect key="frame" x="32" y="778" width="329" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.92063301799999997" green="0.3776196241" blue="0.3411375284" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Delete Diary">
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="deleteDiaryAction:" destination="Gjy-o3-W8z" eventType="touchUpInside" id="Ff3-nN-EPx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihX-tj-rHg" userLabel="editButton">
+                                <rect key="frame" x="16" y="50" width="48" height="38"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="backIcon" imagePadding="-2"/>
+                                <connections>
+                                    <action selector="backBtnAction:" destination="Gjy-o3-W8z" eventType="touchUpInside" id="kEg-PY-cy2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="WBm-fW-NeC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ihX-tj-rHg" firstAttribute="top" secondItem="R4d-MQ-xuq" secondAttribute="top" constant="50" id="BNR-Px-mMG"/>
+                            <constraint firstItem="ihX-tj-rHg" firstAttribute="leading" secondItem="WBm-fW-NeC" secondAttribute="leading" constant="16" id="bhM-bL-LRW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addTitle" destination="1y5-HH-MYd" id="HFJ-RW-AZ6"/>
+                        <outlet property="backBtn" destination="ihX-tj-rHg" id="aJp-Cu-Qqk"/>
+                        <outlet property="datePicker" destination="u0l-YX-gbj" id="Hco-Ie-UlQ"/>
+                        <outlet property="deleteDiary" destination="wgl-pj-lsf" id="9iF-cf-8fD"/>
+                        <outlet property="editbutton" destination="LOO-Fy-Yi3" id="osD-dD-RGs"/>
+                        <outlet property="noteTextField" destination="HsT-AG-hyi" id="Fuw-Il-N4B"/>
+                        <outlet property="noteView" destination="Iid-v1-qeE" id="Eo7-S1-qFC"/>
+                        <outlet property="saveChangesBtn" destination="lPJ-Wq-D6I" id="408-bi-GLN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3g9-U9-aa6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3574" y="787"/>
+        </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="Sqz-KA-zZj"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="Facebook_Logo_(2019)" width="1200" height="1200"/>
         <image name="Untitled_Artwork 2" width="1179" height="2556"/>
