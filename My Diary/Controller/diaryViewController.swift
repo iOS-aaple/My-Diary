@@ -9,27 +9,47 @@ import UIKit
 
 class diaryViewController: UIViewController {
 
+    //MARK: - Outlet
+    @IBOutlet weak var emptyView: UIView!
+    @IBOutlet weak var addDiaryButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var menuView: UIView!
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var trailingMenuConstant: NSLayoutConstraint!
+    
+    //MARK: - Vars
     var userEmail = String()
     var menuVC: menuViewController?
     var isMenuShown = false
+    var diary: [Int] = []
+    
+    //MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
            setUI()
        
         }
-    
+    //MARK: - Function
     private func setUI(){
         collectionView.delegate = self
         collectionView.dataSource = self
     
         backgroundView.isHidden = true
+        addDiaryButton.layer.cornerRadius = 15
         let tap = UITapGestureRecognizer(target: self, action: #selector(tappingToBackView))
         tap.numberOfTapsRequired = 1
-        view.addGestureRecognizer(tap)
+        backgroundView.addGestureRecognizer(tap)
+        
+        if diary .isEmpty{
+            collectionView.isHidden = true
+            emptyView.isHidden = false
+        } else{
+            collectionView.isHidden = false
+            emptyView.isHidden = true
+            
+        }
+        
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -45,7 +65,7 @@ class diaryViewController: UIViewController {
     }
     
     @objc func tappingToBackView(){
-//        hiddeMenuView()
+       hiddeMenuView()
     }
     
     private func hiddeMenuView(){
@@ -65,6 +85,7 @@ class diaryViewController: UIViewController {
         }
     }
     
+    //MARK: - IBAction
     @IBAction func presentMenu(_ sender: UIButton){
         UIView.animate(withDuration: 0.1) {
             self.trailingMenuConstant.constant = 10
@@ -93,7 +114,7 @@ class diaryViewController: UIViewController {
 
 extension diaryViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        diary.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -106,6 +127,9 @@ extension diaryViewController: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.view.frame.width * 0.8, height: self.view.frame.height * 0.12)
 
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.row)
     }
     
 }
