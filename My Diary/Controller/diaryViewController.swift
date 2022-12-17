@@ -30,10 +30,11 @@ class diaryViewController: UIViewController {
         getPosts()
      // deletePost()
 //        editPost()
-        addNewPost()
+      //  addNewPost()
         }
     
     override func viewDidAppear(_ animated: Bool) {
+        checkisEmpty()
         collectionView.reloadData()
     }
     //MARK: - Function
@@ -191,7 +192,10 @@ extension diaryViewController: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "diaryCell", for: indexPath) as! diaryCell
-       cell.viewCell.layer.cornerRadius = 20
+        cell.viewCell.layer.cornerRadius = 20
+        let data = diary[indexPath.row]
+        cell.titleLable.text = data["title"]
+        cell.dataLabel.text = data["created_At"]
         
         return cell
     }
@@ -201,6 +205,15 @@ extension diaryViewController: UICollectionViewDelegate, UICollectionViewDataSou
 
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyBoard = UIStoryboard(name: "AddEdit", bundle: nil)
+        let addEditVC = storyBoard.instantiateViewController(withIdentifier: String"AddEdit") as! AddEditViewController
+       // addEditVC.isEdited = true
+        let data = diary[indexPath.row]
+        addEditVC.addTitle.text = data["title"]
+        addEditVC.noteTextField.text = data["content"]
+        addEditVC.modalPresentationStyle = .fullScreen
+        
+        present(addEditVC, animated: true)
         
     }
     

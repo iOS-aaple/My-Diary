@@ -10,5 +10,7 @@ import UIKit
 class diaryCell: UICollectionViewCell {
     
     @IBOutlet weak var viewCell: UIView!
+    @IBOutlet weak var titleLable: UILabel!
+    @IBOutlet weak var dataLabel: UILabel!
     
 }
