@@ -28,9 +28,9 @@ class AddEditViewController: UIViewController {
     //MARK: setup views corners
         noteView.layer.cornerRadius = 40
         saveChangesBtn.layer.cornerRadius = 20
-
-       
+        
     }
+    
     
     // MARK: save Changes Functionality
     @IBAction func saveBtnAction(_ sender: Any) {
