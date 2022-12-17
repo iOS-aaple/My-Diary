@@ -35,13 +35,7 @@ class menuViewController: UIViewController {
         menuDelegate?.hiddeMenu()
     }
     
-    @IBAction func accountButton(_ sender: UIButton){
-        
-    }
     
-    @IBAction func addNewDiaryButton(_ sender: UIButton){
-       
-    }
     
     @IBAction func LogOutButton(_ sender: UIButton){
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
