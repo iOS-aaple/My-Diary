@@ -12,7 +12,18 @@ protocol Menu{
 }
 
 class menuViewController: UIViewController {
-
+   var userEmail = String()
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "MyAccount"{
+            let myAccountView = segue.destination as! MyAccountViewController
+            myAccountView.userEmail =  userEmail
+            
+        }
+        if segue.identifier == "NewDiary"{
+            print("NewDiary")
+        }
+    }
     var menuDelegate: Menu?
     
     override func viewDidLoad() {
