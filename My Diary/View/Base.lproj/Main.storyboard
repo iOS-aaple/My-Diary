@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oIM-Vi-JJm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nYm-wK-fMj">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -75,7 +75,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Don't have account ? sing up  "/>
                                 <connections>
-                                    <segue destination="xK5-RV-BUP" kind="show" id="iRF-e1-8io"/>
+                                    <segue destination="xK5-RV-BUP" kind="show" identifier="seg" id="iRF-e1-8io"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_____________ or _____________" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Br-ge-hjW">
@@ -124,7 +124,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="giD-FV-fqL"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.92844635249999996" green="0.866753459" blue="0.81375676389999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="UeL-Sj-Xa5" firstAttribute="top" secondItem="a9q-n8-A8Z" secondAttribute="top" id="24C-yD-60V"/>
                             <constraint firstAttribute="bottom" secondItem="UeL-Sj-Xa5" secondAttribute="bottom" id="2SN-C9-ZGU"/>
@@ -260,11 +260,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="KuA-g7-NdI">
-                                <rect key="frame" x="58" y="285.66666666666669" width="24" height="17.666666666666686"/>
+                                <rect key="frame" x="58" y="285.66666666666663" width="24" height="17.666666666666714"/>
                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mail.stack" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9nL-fY-wFK">
-                                <rect key="frame" x="58" y="327" width="24" height="20.666666666666629"/>
+                                <rect key="frame" x="58" y="327" width="24" height="20.666666666666657"/>
                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20.333333333333286" id="GVc-oS-3HV"/>
@@ -413,7 +413,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iUC-fG-9je" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="112.30769230769231" y="-2.1327014218009479"/>
+            <point key="canvasLocation" x="89" y="-2"/>
         </scene>
         <!--Diary View Controller-->
         <scene sceneID="mTN-63-q5S">
@@ -748,7 +748,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="F6G-NW-iYr">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="E9Y-oH-4cQ">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="KDM-2a-V46">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="KDM-2a-V46">
                                 <rect key="frame" x="288" y="3" width="86" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>

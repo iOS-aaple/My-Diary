@@ -10,11 +10,11 @@ import UIKit
 class ViewController: UIViewController {
     
     
-//    var imageViewHome: UIImageView = {
-//        let imageViewHome = UIImageView(frame: CGRect(x:  0, y: 0, width: 150, height: 150))
-//        imageViewHome.image = UIImage(named: "bloom")
-//        return imageViewHome
-//    }()
+    var imageView: UIImageView = {
+        var imageView = UIImageView(frame: CGRect(x:  0, y: 0, width: 250, height: 250))
+        imageView.image = UIImage(named: "bloomHom")
+        return imageView
+    }()
     
     
     
@@ -37,7 +37,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //view.addSubview(imageViewHome)
+        view.addSubview(imageView)
         self.userNameTextFilde.alpha = 0
         self.passwordTextFilde.alpha = 0
         self.loginButtonOutlet.alpha = 0
@@ -52,10 +52,13 @@ class ViewController: UIViewController {
         wrongMessageLabel.isHidden = true
         
     }
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLoad()
-//        imageViewHome.center = view.center
-//    }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLoad()
+        imageView.center = view.center
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.5, execute: {
+            self.animations()
+        })
+    }
     override func viewDidAppear(_ animated: Bool) {
         animations()
     }
@@ -74,18 +77,14 @@ class ViewController: UIViewController {
             self.signinOption.alpha = 1
         }
         
-//        UIView.animate(withDuration: 1, animations: {
-//            let size = self.view.frame.size.width * 1.5
-//            let diffx = size - self.view.frame.size.width
-//            let diffy =  self.view.frame.size.height - size
-//
-//
-//            self.imageViewHome = CGRect(x: -(diffx/2), y: diffy/2, width: size, height: size)
-//
-//
-//
-//
-//        })
+        UIView.animate(withDuration: 1, animations: {
+            let size = self.view.frame.size.width * 1.5
+            let diffx = size - self.view.frame.size.width
+            let diffy =  self.view.frame.size.height - size
+
+            self.imageView.frame = CGRect(x: -(diffx/2), y: diffy/2, width: size, height: size)
+            self.imageView.alpha = 0
+        })
         
         
         
