@@ -10,11 +10,11 @@ import UIKit
 class ViewController: UIViewController {
     
     
-//    var imageViewHome: UIImageView = {
-//        let imageViewHome = UIImageView(frame: CGRect(x:  0, y: 0, width: 150, height: 150))
-//        imageViewHome.image = UIImage(named: "bloom")
-//        return imageViewHome
-//    }()
+    //    var imageViewHome: UIImageView = {
+    //        let imageViewHome = UIImageView(frame: CGRect(x:  0, y: 0, width: 150, height: 150))
+    //        imageViewHome.image = UIImage(named: "bloom")
+    //        return imageViewHome
+    //    }()
     
     
     
@@ -52,10 +52,10 @@ class ViewController: UIViewController {
         wrongMessageLabel.isHidden = true
         
     }
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLoad()
-//        imageViewHome.center = view.center
-//    }
+    //    override func viewDidLayoutSubviews() {
+    //        super.viewDidLoad()
+    //        imageViewHome.center = view.center
+    //    }
     override func viewDidAppear(_ animated: Bool) {
         animations()
     }
@@ -74,26 +74,26 @@ class ViewController: UIViewController {
             self.signinOption.alpha = 1
         }
         
-//        UIView.animate(withDuration: 1, animations: {
-//            let size = self.view.frame.size.width * 1.5
-//            let diffx = size - self.view.frame.size.width
-//            let diffy =  self.view.frame.size.height - size
-//
-//
-//            self.imageViewHome = CGRect(x: -(diffx/2), y: diffy/2, width: size, height: size)
-//
-//
-//
-//
-//        })
+        //        UIView.animate(withDuration: 1, animations: {
+        //            let size = self.view.frame.size.width * 1.5
+        //            let diffx = size - self.view.frame.size.width
+        //            let diffy =  self.view.frame.size.height - size
+        //
+        //
+        //            self.imageViewHome = CGRect(x: -(diffx/2), y: diffy/2, width: size, height: size)
+        //
+        //
+        //
+        //
+        //        })
         
         
         
     }
-        
+    
     @IBAction func singUpButton(_ sender: Any) {
     }
-   
+    
     
     @IBAction func loginButton(_ sender: Any) {
         users.login(email: userNameTextFilde.text!, password: passwordTextFilde.text!) { data, response, error in
@@ -122,8 +122,14 @@ class ViewController: UIViewController {
                 print("\(error)")
             }
         }
-      
+        
+        
     } // end of loginButton()
     
+    @IBAction func forgetPassowrd(_ sender: Any) {
+        let storyboard = storyboard?.instantiateViewController(withIdentifier: "ForgetPasswordView")
+        storyboard?.modalPresentationStyle = .fullScreen
+        present(storyboard!, animated: true)
+    }
 }
 
