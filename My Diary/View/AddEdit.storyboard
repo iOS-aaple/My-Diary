@@ -44,7 +44,6 @@
                                             <color key="baseForegroundColor" red="0.90980392160000001" green="0.36470588240000001" blue="0.33725490200000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="saveAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="7S0-Nw-lGq"/>
                                             <action selector="saveBtnAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="AxH-S5-bHf"/>
                                         </connections>
                                     </button>
@@ -124,13 +123,10 @@
                     <connections>
                         <outlet property="addTitle" destination="x4R-oY-ttt" id="EBb-tX-Rp1"/>
                         <outlet property="datePicker" destination="Qx9-d6-Uq4" id="NPR-sj-ad4"/>
-                        <outlet property="datepicker" destination="Qx9-d6-Uq4" id="dOZ-3B-0xR"/>
                         <outlet property="editbutton" destination="je2-so-Iiz" id="0ld-cY-AwN"/>
                         <outlet property="noteTextField" destination="KNk-pV-tas" id="NUH-Fa-w08"/>
                         <outlet property="noteView" destination="fEn-t3-RR7" id="MLR-vt-eb5"/>
-                        <outlet property="saveBtn" destination="Yif-Sh-wKO" id="9lE-rf-JjD"/>
                         <outlet property="saveChangesBtn" destination="Yif-Sh-wKO" id="fsM-Gy-gzP"/>
-                        <outlet property="titleTextField" destination="x4R-oY-ttt" id="qrQ-na-QLV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
