@@ -27,7 +27,6 @@
 		84DBF84F294BC7F5005FF46F /* diaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DBF84E294BC7F5005FF46F /* diaryCell.swift */; };
 		84DBF853294C02B4005FF46F /* menuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DBF852294C02B4005FF46F /* menuViewController.swift */; };
 		AFFFF1EB294C7DD800C143A5 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFFF1EA294C7DD800C143A5 /* DetailsViewController.swift */; };
-		E46D1EEF294B679C0017405A /* AddEdit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E46D1EEE294B679C0017405A /* AddEdit.storyboard */; };
 		E46D933B294D84CB00ABD5D5 /* AddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46D933A294D84CB00ABD5D5 /* AddEditViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -73,7 +72,6 @@
 		84DBF84E294BC7F5005FF46F /* diaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = diaryCell.swift; sourceTree = "<group>"; };
 		84DBF852294C02B4005FF46F /* menuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuViewController.swift; sourceTree = "<group>"; };
 		AFFFF1EA294C7DD800C143A5 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailsViewController.swift; path = "My Diary/View/DetailsViewController.swift"; sourceTree = SOURCE_ROOT; };
-		E46D1EEE294B679C0017405A /* AddEdit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddEdit.storyboard; sourceTree = "<group>"; };
 		E46D933A294D84CB00ABD5D5 /* AddEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,7 +157,6 @@
 			children = (
 				3F1CA25B294B076600577F50 /* Main.storyboard */,
 				3FE2486A294B286D007500DB /* MyAccount.storyboard */,
-				E46D1EEE294B679C0017405A /* AddEdit.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -295,7 +292,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F1CA262294B076800577F50 /* LaunchScreen.storyboard in Resources */,
-				E46D1EEF294B679C0017405A /* AddEdit.storyboard in Resources */,
 				3F1CA25F294B076800577F50 /* Assets.xcassets in Resources */,
 				3FE2486B294B286D007500DB /* MyAccount.storyboard in Resources */,
 				3F1CA25D294B076600577F50 /* Main.storyboard in Resources */,

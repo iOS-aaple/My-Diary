@@ -24,6 +24,9 @@ class AddEditViewController: UIViewController {
     
     @IBOutlet weak var deleteDiary: UIButton!
     
+    @IBOutlet weak var backBtn: UIButton!
+    
+    
     // MARK: Vars
     var isEdited = false
     
@@ -50,8 +53,13 @@ class AddEditViewController: UIViewController {
         
     }
     
-    // MARK: edit Changes Functionality 
-    @IBAction func editBtnAction(_ sender: Any) {
+    // MARK: delete Button Action
+    
+    @IBAction func deleteDiaryAction(_ sender: Any) {
+    }
+    
+    // MARK: back Changes Functionality 
+    @IBAction func backBtnAction(_ sender: Any) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let loginView = storyBoard.instantiateViewController(withIdentifier: "homeDiary")
         loginView.modalPresentationStyle = .fullScreen

@@ -194,8 +194,8 @@ extension diaryViewController: UICollectionViewDelegate, UICollectionViewDataSou
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "diaryCell", for: indexPath) as! diaryCell
         cell.viewCell.layer.cornerRadius = 20
         let data = diary[indexPath.row]
-        cell.titleLable.text = data["title"]
-        cell.dataLabel.text = data["created_At"]
+        cell.titleLable.text = data["title"] as! String
+        cell.dataLabel.text = data["created_At"] as! String
         
         return cell
     }
@@ -206,11 +206,11 @@ extension diaryViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyBoard = UIStoryboard(name: "AddEdit", bundle: nil)
-        let addEditVC = storyBoard.instantiateViewController(withIdentifier: String"AddEdit") as! AddEditViewController
-       // addEditVC.isEdited = true
+        let addEditVC = storyBoard.instantiateViewController(withIdentifier:"AddEdit") as! AddEditViewController
+        addEditVC.isEdited = true
         let data = diary[indexPath.row]
-        addEditVC.addTitle.text = data["title"]
-        addEditVC.noteTextField.text = data["content"]
+        addEditVC.addTitle.text = data["title"] as! String
+        addEditVC.noteTextField.text = data["content"] as! String
         addEditVC.modalPresentationStyle = .fullScreen
         
         present(addEditVC, animated: true)
