@@ -21,14 +21,21 @@ class diaryViewController: UIViewController {
     var userEmail = String()
     var menuVC: menuViewController?
     var isMenuShown = false
-    var diary: [Int] = []
-    
+    var diary: [NSDictionary] = []
+    var userID = "111"
     //MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
            setUI()
-       
+        getPosts()
+     // deletePost()
+//        editPost()
+        addNewPost()
         }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        collectionView.reloadData()
+    }
     //MARK: - Function
     private func setUI(){
         collectionView.delegate = self
@@ -40,6 +47,13 @@ class diaryViewController: UIViewController {
         tap.numberOfTapsRequired = 1
         backgroundView.addGestureRecognizer(tap)
         
+        checkisEmpty()
+     
+        
+        
+    }
+    
+    func checkisEmpty(){
         if diary .isEmpty{
             collectionView.isHidden = true
             emptyView.isHidden = false
@@ -48,8 +62,6 @@ class diaryViewController: UIViewController {
             emptyView.isHidden = true
             
         }
-        
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -105,6 +117,66 @@ class diaryViewController: UIViewController {
         self.backgroundView.isHidden = false
     }
     
+    func getPosts(){
+        posts.getAllPosts(id: "111") { data, response, error in
+            do{
+                if let jsonResul = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSArray{
+                   
+                    for post in jsonResul {
+                        let pp = post as! NSDictionary
+                        self.diary.append(pp)
+                    }
+                    print(jsonResul)
+                    DispatchQueue.main.async {
+                        self.checkisEmpty()
+                        
+                        self.collectionView.reloadData()
+                    }
+                }
+                
+                
+                
+            }catch {
+                print("\(error)")
+            }
+        }
+    }
+    
+    func deletePost(){
+        
+        posts.deletePost(id: "639e128c69c7f976264d18a9") { data, response, error in
+            let httpRespons = response as! HTTPURLResponse
+            
+            print(httpRespons.statusCode)
+        }
+    }
+    
+    func editPost(){
+        posts.updatePost(id: "639e14b453c9c8921dae6687", ownerId: "111", title: "Asa", created_At: "2022-10-10", content: "SSSSSSSSS") { data, respons, error in
+            do{
+                let httpResponse = respons as! HTTPURLResponse
+                DispatchQueue.main.async {
+                    if httpResponse.statusCode == 200 {
+                        print(httpResponse.statusCode)
+                    }
+                }
+            }
+        }
+    }
+    
+    func addNewPost(){
+        
+        posts.AddNewPost(ownerId: "111", title: "Asa", created_At: "2022-10-10", content: "SSSSSSSSS") { data, respons, error in
+            do{
+                let httpResponse = respons as! HTTPURLResponse
+                DispatchQueue.main.async {
+                    if httpResponse.statusCode == 200 {
+                        print(httpResponse.statusCode)
+                    }
+                }
+            }
+        }
+    }
     
     
    
@@ -129,7 +201,7 @@ extension diaryViewController: UICollectionViewDelegate, UICollectionViewDataSou
 
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
+        
     }
     
 }
