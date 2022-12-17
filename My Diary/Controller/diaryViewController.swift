@@ -23,14 +23,12 @@ class diaryViewController: UIViewController {
     var isMenuShown = false
     var diary: [NSDictionary] = []
     var userID = "111"
+    
     //MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-           setUI()
-        getPosts()
-     // deletePost()
-//        editPost()
-      //  addNewPost()
+        setUI()
+       // getPosts()
         }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -119,7 +117,7 @@ class diaryViewController: UIViewController {
     }
     
     func getPosts(){
-        posts.getAllPosts(id: "111") { data, response, error in
+        posts.getAllPosts(id: userID) { data, response, error in
             do{
                 if let jsonResul = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSArray{
                    
@@ -142,43 +140,6 @@ class diaryViewController: UIViewController {
             }
         }
     }
-    
-    func deletePost(){
-        
-        posts.deletePost(id: "639e128c69c7f976264d18a9") { data, response, error in
-            let httpRespons = response as! HTTPURLResponse
-            
-            print(httpRespons.statusCode)
-        }
-    }
-    
-    func editPost(){
-        posts.updatePost(id: "639e14b453c9c8921dae6687", ownerId: "111", title: "Asa", created_At: "2022-10-10", content: "SSSSSSSSS") { data, respons, error in
-            do{
-                let httpResponse = respons as! HTTPURLResponse
-                DispatchQueue.main.async {
-                    if httpResponse.statusCode == 200 {
-                        print(httpResponse.statusCode)
-                    }
-                }
-            }
-        }
-    }
-    
-    func addNewPost(){
-        
-        posts.AddNewPost(ownerId: "111", title: "Asa", created_At: "2022-10-10", content: "SSSSSSSSS") { data, respons, error in
-            do{
-                let httpResponse = respons as! HTTPURLResponse
-                DispatchQueue.main.async {
-                    if httpResponse.statusCode == 200 {
-                        print(httpResponse.statusCode)
-                    }
-                }
-            }
-        }
-    }
-    
     
    
 
@@ -205,10 +166,11 @@ extension diaryViewController: UICollectionViewDelegate, UICollectionViewDataSou
 
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let storyBoard = UIStoryboard(name: "AddEdit", bundle: nil)
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil) 
         let addEditVC = storyBoard.instantiateViewController(withIdentifier:"AddEdit") as! AddEditViewController
         addEditVC.isEdited = true
         let data = diary[indexPath.row]
+        addEditVC.diaryId = data["_id"] as! String
         addEditVC.addTitle.text = data["title"] as! String
         addEditVC.noteTextField.text = data["content"] as! String
         addEditVC.modalPresentationStyle = .fullScreen
