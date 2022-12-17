@@ -16,28 +16,28 @@ class users:ViewController {
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
         request.setValue("application/json ", forHTTPHeaderField: "Content-Type")
-
-            let body = [
-                "email":email,
-                "password":password
-            ]
-
-
+        
+        let body = [
+            "email":email,
+            "password":password
+        ]
+        
+        
         request.httpBody = try? JSONSerialization.data(withJSONObject: body,options: .fragmentsAllowed)
         let session = URLSession.shared
         let task = session.dataTask(with: request, completionHandler: completionHandler)
         task.resume()
-
+        
     } // end login()
     
     
     static func getUserData (email:String,completionHandler:@escaping(_ data: Data?, _ response: URLResponse?, _ error: Error?) -> Void) {
         let url = URL(string:"http://localhost:4000/users/getOne/\(email)")
-       
+        
         let session = URLSession.shared
-       
+        
         let task = session.dataTask(with: url!, completionHandler: completionHandler)
-       
+        
         task.resume()
     } // end getUserData()
     
@@ -47,16 +47,39 @@ class users:ViewController {
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
         request.setValue("application/json ", forHTTPHeaderField: "Content-Type")
-
-            let body = [
-                "name":name,
-                "email":email,
-                "password":password,
-                "birthday":birthday,
-                "phoneNumber":phoneNumber
-            ]
-
-
+        
+        let body = [
+            "name":name,
+            "email":email,
+            "password":password,
+            "birthday":birthday,
+            "phoneNumber":phoneNumber
+        ]
+        
+        
+        request.httpBody = try? JSONSerialization.data(withJSONObject: body,options: .fragmentsAllowed)
+        let session = URLSession.shared
+        let task = session.dataTask(with: request, completionHandler: completionHandler)
+        task.resume()
+        
+    } // end signup()
+    
+    static func updateUser (id:String,name:String,email:String,password:String,phoneNumber:String,birthday:String,completionHandler:@escaping(_ data: Data?, _ response: URLResponse?, _ error: Error?) -> Void) {
+        
+        let url = URL(string: "http://localhost:4000/users/update/\(id)")
+        var request = URLRequest(url: url!)
+        request.httpMethod = "POST"
+        request.setValue("application/json ", forHTTPHeaderField: "Content-Type")
+        
+        let body = [
+            "name":name,
+            "email":email,
+            "password":password,
+            "birthday":birthday,
+            "phoneNumber":phoneNumber
+        ]
+        
+        
         request.httpBody = try? JSONSerialization.data(withJSONObject: body,options: .fragmentsAllowed)
         let session = URLSession.shared
         let task = session.dataTask(with: request, completionHandler: completionHandler)
@@ -65,4 +88,22 @@ class users:ViewController {
     } // end signup()
     
     
+   static func auth (name:String,email:String,completionHandler:@escaping(_ data: Data?, _ response: URLResponse?, _ error: Error?) -> Void) {
+        
+        let url = URL(string: "http://localhost:4000/users/Auth")
+        var request = URLRequest(url: url!)
+        request.httpMethod = "POST"
+        request.setValue("application/json ", forHTTPHeaderField: "Content-Type")
+        
+        let body = [
+            "name":name,
+            "email":email,
+        ]
+        
+        request.httpBody = try? JSONSerialization.data(withJSONObject: body,options: .fragmentsAllowed)
+        let session = URLSession.shared
+        let task = session.dataTask(with: request, completionHandler: completionHandler)
+        task.resume()
+        
+    }
 }

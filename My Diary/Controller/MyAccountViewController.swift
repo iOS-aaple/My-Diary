@@ -11,6 +11,7 @@ class MyAccountViewController: UIViewController {
 
     var userEmail = String()
     var userInfo = NSDictionary()
+    var userID = String()
     @IBOutlet weak var personInfoContainer: UIView!
     @IBOutlet weak var nameLabel: UITextField!
     @IBOutlet weak var cityLabel: UITextField!
@@ -46,6 +47,23 @@ class MyAccountViewController: UIViewController {
         
     }
     @IBAction func editAccount(_ sender: Any) {
+        
+        print(self.userID)
+        
+//        users.updateUser(id: userID, name: nameLabel.text!, email: userEmail, password: "123", phoneNumber: telLabel.text!, birthday: "12/12/1999") { data, response, error in
+//
+//            let httpResponsr = response as! HTTPURLResponse
+//            DispatchQueue.main.async {
+//                if httpResponsr.statusCode == 200 {
+//                    let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+//                    let loginView = storyBoard.instantiateViewController(withIdentifier: "LoginView")
+//                    loginView.modalPresentationStyle = .fullScreen
+//                    self.present(loginView, animated: true)
+//                }
+//
+//            }
+//
+//        }
       
         
     }
