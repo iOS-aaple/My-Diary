@@ -22,18 +22,32 @@ class AddEditViewController: UIViewController {
     
     @IBOutlet weak var editbutton: UIButton! // content edit
     
+    @IBOutlet weak var deleteDiary: UIButton!
+    
+    // MARK: Vars
+    var isEdited = false
+    
+    
+    func check(){
+        if isEdited == false {
+            
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
     //MARK: setup views corners
         noteView.layer.cornerRadius = 40
         saveChangesBtn.layer.cornerRadius = 20
+        deleteDiary.layer.cornerRadius = 20
         
     }
     
     
     // MARK: save Changes Functionality
     @IBAction func saveBtnAction(_ sender: Any) {
+        
     }
     
     // MARK: edit Changes Functionality 
