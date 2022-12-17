@@ -29,8 +29,6 @@ class AddEditViewController: UIViewController {
     // MARK: Vars
     var isEdited = false
     var diaryId:String?
-    var DTitel:String?
-    var content:String?
     var userId: String?
     
     let dataFormatter = DateFormatter()
