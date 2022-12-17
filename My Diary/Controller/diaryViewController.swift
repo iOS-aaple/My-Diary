@@ -44,7 +44,7 @@ class diaryViewController: UIViewController {
     }
     
     @objc func tappingToBackView(){
-        hiddeMenuView()
+//        hiddeMenuView()
     }
     
     private func hiddeMenuView(){

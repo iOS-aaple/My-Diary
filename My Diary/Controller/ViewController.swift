@@ -21,6 +21,11 @@ class ViewController: UIViewController {
     
     // MARK: - @IBOutlets
     
+    @IBOutlet weak var orText: UIImageView!
+    @IBOutlet weak var forgetPasswordBtn: UIButton!
+    @IBOutlet weak var helloText: UILabel!
+    @IBOutlet weak var signinOption: UIStackView!
+    @IBOutlet weak var wrongMessageLabel: UILabel!
     @IBOutlet weak var userNameTextFilde: UITextField!
     @IBOutlet weak var passwordTextFilde: UITextField!
     @IBOutlet weak var userImage: UIImageView!
@@ -39,6 +44,12 @@ class ViewController: UIViewController {
         self.passwordImage.alpha = 0
         self.signUpOutlet.alpha = 0
         self.userImage.alpha = 0
+        self.forgetPasswordBtn.alpha = 0
+        self.helloText.alpha = 0
+        self.orText.alpha = 0
+        self.signinOption.alpha = 0
+        
+        wrongMessageLabel.isHidden = true
         
     }
 //    override func viewDidLayoutSubviews() {
@@ -57,6 +68,10 @@ class ViewController: UIViewController {
             self.passwordImage.alpha = 1
             self.signUpOutlet.alpha = 1
             self.userImage.alpha = 1
+            self.forgetPasswordBtn.alpha = 1
+            self.helloText.alpha = 1
+            self.orText.alpha = 1
+            self.signinOption.alpha = 1
         }
         
 //        UIView.animate(withDuration: 1, animations: {
@@ -76,17 +91,49 @@ class ViewController: UIViewController {
         
     }
         
-    
-    
-    
-    
-    
     @IBAction func singUpButton(_ sender: Any) {
     }
    
     
     @IBAction func loginButton(_ sender: Any) {
-    }
+        users.login(email: userNameTextFilde.text!, password: passwordTextFilde.text!) { data, response, error in
+            do{
+                let httpResponsr = response as! HTTPURLResponse
+                
+                DispatchQueue.main.async {
+                    if httpResponsr.statusCode == 200 {
+                        let email = self.userNameTextFilde.text!
+                        let userData = self.getUserData(email: email)
+                        self.wrongMessageLabel.isHidden = true
+                        let sroryBoard = UIStoryboard(name: "Main", bundle: nil)
+                        let homeView = sroryBoard.instantiateViewController(withIdentifier: "homeDiary")
+                        homeView.modalPresentationStyle = .fullScreen
+                        self.present(homeView, animated: true)
+                    } else{
+                        self.wrongMessageLabel.isHidden = false
+                    }
+                }
+                
+            } catch{
+                print("\(error)")
+            }
+        }
+      
+    } // end of loginButton()
+    
+    func getUserData(email:String) -> NSDictionary{
+        var resualt = NSDictionary()
+        users.getUserData(email: email) { data, response, error in
+            do{
+                let jsonResult = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary
+                resualt = jsonResult!
+                print(jsonResult)
+            } catch {
+                print("\(error)")
+            }
+        }
+        return resualt
+    } // getUserData() 
 
 
 }
