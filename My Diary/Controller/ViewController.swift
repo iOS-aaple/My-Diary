@@ -101,40 +101,29 @@ class ViewController: UIViewController {
                 let httpResponsr = response as! HTTPURLResponse
                 
                 DispatchQueue.main.async {
+                    
                     if httpResponsr.statusCode == 200 {
+                        
                         let email = self.userNameTextFilde.text!
-                        let userData = self.getUserData(email: email)
                         self.wrongMessageLabel.isHidden = true
                         let sroryBoard = UIStoryboard(name: "Main", bundle: nil)
-                        let homeView = sroryBoard.instantiateViewController(withIdentifier: "homeDiary")
+                        let homeView = sroryBoard.instantiateViewController(withIdentifier: "homeDiary") as! diaryViewController
+                        homeView.userEmail = email
                         homeView.modalPresentationStyle = .fullScreen
                         self.present(homeView, animated: true)
-                    } else{
+                    }
+                    else{
                         self.wrongMessageLabel.isHidden = false
                     }
-                }
+                } // end of DispatchQueue
                 
-            } catch{
+            }
+            catch{
                 print("\(error)")
             }
         }
       
     } // end of loginButton()
     
-    func getUserData(email:String) -> NSDictionary{
-        var resualt = NSDictionary()
-        users.getUserData(email: email) { data, response, error in
-            do{
-                let jsonResult = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary
-                resualt = jsonResult!
-                print(jsonResult)
-            } catch {
-                print("\(error)")
-            }
-        }
-        return resualt
-    } // getUserData() 
-
-
 }
 

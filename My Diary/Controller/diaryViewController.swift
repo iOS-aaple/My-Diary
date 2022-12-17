@@ -12,14 +12,14 @@ class diaryViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var menuView: UIView!
     @IBOutlet weak var backgroundView: UIView!
-    
     @IBOutlet weak var trailingMenuConstant: NSLayoutConstraint!
-    
+    var userEmail = String()
     var menuVC: menuViewController?
     var isMenuShown = false
     override func viewDidLoad() {
         super.viewDidLoad()
            setUI()
+       
         }
     
     private func setUI(){
@@ -37,6 +37,7 @@ class diaryViewController: UIViewController {
         {
             if let controller = segue.destination as? menuViewController
             {
+                controller.userEmail = userEmail
                 self.menuVC = controller
                 self.menuVC?.menuDelegate = self
             }
