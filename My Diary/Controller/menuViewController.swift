@@ -33,7 +33,10 @@ class menuViewController: UIViewController {
     }
     
     @IBAction func LogOutButton(_ sender: UIButton){
-        
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let loginView = storyBoard.instantiateViewController(withIdentifier: "LoginView")
+        loginView.modalPresentationStyle = .fullScreen
+        present(loginView, animated: true)
     }
 
 }

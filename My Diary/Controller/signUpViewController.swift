@@ -11,9 +11,14 @@ class signUpViewController: UIViewController {
 
     //MARK: - IBOutlet
       
-      @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var wrongMassageLabel: UILabel!
+    @IBOutlet weak var signupOptions: UIStackView!
+    @IBOutlet weak var orText: UILabel!
+    @IBOutlet weak var signupBtn: UIButton!
+    @IBOutlet weak var userNameTextField: UITextField!
       @IBOutlet weak var emailTextField: UITextField!
-      @IBOutlet weak var dateOfBirthTextField: UITextField!
+      @IBOutlet weak var phoneNumberTextField: UITextField!
+      @IBOutlet weak var dateOfBirthTextField: UIDatePicker!
       @IBOutlet weak var newPasswordTextField: UITextField!
       @IBOutlet weak var reWritePasswordTextField: UITextField!
       @IBOutlet weak var profileImage: UIImageView!
@@ -26,6 +31,7 @@ class signUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        wrongMassageLabel.isHidden = true
         self.userNameTextField.alpha = 0
         self.emailTextField.alpha = 0
         self.dateOfBirthTextField.alpha = 0
@@ -36,6 +42,10 @@ class signUpViewController: UIViewController {
         self.pass2Image.alpha = 0
         self.calenderImage.alpha = 0
         self.emailImage.alpha = 0
+        self.phoneNumberTextField.alpha = 0
+        self.signupBtn.alpha = 0
+        self.orText.alpha = 0
+        self.signupOptions.alpha = 0
     }
     override func viewDidAppear(_ animated: Bool) {
         animations2()
@@ -54,6 +64,10 @@ class signUpViewController: UIViewController {
             self.pass2Image.alpha = 1
             self.calenderImage.alpha = 1
             self.emailImage.alpha = 1
+            self.phoneNumberTextField.alpha = 1
+            self.signupBtn.alpha = 1
+            self.orText.alpha = 1
+            self.signupOptions.alpha = 1
             
         }
         
@@ -61,8 +75,31 @@ class signUpViewController: UIViewController {
         
     }
     @IBAction func signUpButton(_ sender: Any) {
-    }
+        if newPasswordTextField.text != reWritePasswordTextField.text{
+            wrongMassageLabel.isHidden = false
+        }
+        else{
+            wrongMassageLabel.isHidden = true
+       
+        let dateOfBirth = "\(dateOfBirthTextField.date)"
+        users.signup(name: userNameTextField.text!, email: emailTextField.text!, password: newPasswordTextField.text!, phoneNumber:phoneNumberTextField.text! , birthday: dateOfBirth) { data, response, error in
+            
+            do{
+                let httpResponsr = response as! HTTPURLResponse
+                
+                DispatchQueue.main.async {
+                    self.navigationController?.popToRootViewController(animated: true)
+                }
+                
+            }catch{
+                print("\(error)")
+            }
+        
+        }
+        }
+    }/// end signUpButton() 
     
+
     
 
 }
