@@ -75,7 +75,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="osama" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lhk-nz-Mbe">
+                                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="05909995" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NU3-yf-rM6">
                                                         <rect key="frame" x="55" y="0.0" width="206" height="34"/>
                                                         <color key="backgroundColor" red="0.90980392160000001" green="0.86274509799999999" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -95,7 +95,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="osama@gmail" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xGH-XB-hHa">
+                                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="05909995" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eUj-eU-p0L">
                                                         <rect key="frame" x="55" y="0.0" width="206" height="34"/>
                                                         <color key="backgroundColor" red="0.90980392160000001" green="0.86274509799999999" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -204,12 +204,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bDate" destination="jqR-I2-iNQ" id="sGb-2e-5wM"/>
                         <outlet property="cityLabel" destination="eDL-hM-CpJ" id="9Ih-Nd-FnS"/>
                         <outlet property="editAccountBtn" destination="gvi-Hc-caP" id="7ta-6S-NOE"/>
-                        <outlet property="emailLabel" destination="xGH-XB-hHa" id="icp-UD-gIi"/>
-                        <outlet property="nameLabel" destination="Lhk-nz-Mbe" id="gAQ-pK-teu"/>
+                        <outlet property="emailLabel" destination="eUj-eU-p0L" id="Dqv-QO-HN2"/>
+                        <outlet property="nameLabel" destination="NU3-yf-rM6" id="L5V-EY-gd6"/>
                         <outlet property="personInfoContainer" destination="ZtK-ME-ybw" id="nv7-va-pYS"/>
                         <outlet property="telLabel" destination="8pt-PT-Ivt" id="VXs-5y-No6"/>
+                        <outlet property="userName" destination="aMt-ch-oS9" id="tuC-dM-2F6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sSL-94-b6f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

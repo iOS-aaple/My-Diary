@@ -42,7 +42,7 @@ class ForgetPasswordViewController: UIViewController {
                 
                 if httpResponsr.statusCode == 200 {
                     self.wrongMessage.isHidden = true
-                    print("SS")
+                    
                 } else{
                     self.wrongMessage.isHidden = false
                 }

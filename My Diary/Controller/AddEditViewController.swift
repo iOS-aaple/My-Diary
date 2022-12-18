@@ -31,15 +31,19 @@ class AddEditViewController: UIViewController {
     var isEdited = false
     var diaryId:String?
     var userId: String?
-    
+    var diaryTitle = String()
+    var diaryDate = String()
+    var diaryNote = String()
     let dataFormatter = DateFormatter()
-    
+    var diaryOp:diaryOpreations?
     
     func check(){
+        print("🅱️")
         if isEdited {
             deleteDiary.isHidden = false
-            
+            print("🅾️")
         } else {
+            print("❎")
             deleteDiary.isHidden = true
         }
     }
@@ -47,6 +51,7 @@ class AddEditViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("❎ \(userId)")
     //MARK: setup views corners
         noteView.layer.cornerRadius = 40
         saveChangesBtn.layer.cornerRadius = 20
@@ -56,6 +61,10 @@ class AddEditViewController: UIViewController {
         dataFormatter.dateFormat = "dd MMM yyyy"
         datePicker.isHidden = true
         dateLabel.isHidden = true
+        
+        addTitle.text = diaryTitle
+        dateLabel.text = diaryDate
+        noteTextField.text = diaryNote
         
 
     }
@@ -67,39 +76,17 @@ class AddEditViewController: UIViewController {
     // MARK: bbb
     func deletePost(){
         
-        posts.deletePost(id: diaryId!) { data, response, error in
-            let httpRespons = response as! HTTPURLResponse
-            
-            print(httpRespons.statusCode)
-        }
+        diaryOp?.deleteDiary(diaryId: diaryId!, userID: userId!)
     }
     
     func editPost(){
         
-        posts.updatePost(id: diaryId!, ownerId: userId!, title: addTitle.text!, created_At: dataFormatter.string(from: Date()), content: noteTextField.text!) { data, respons, error in
-            do{
-                let httpResponse = respons as! HTTPURLResponse
-                DispatchQueue.main.async {
-                    if httpResponse.statusCode == 200 {
-                        print(httpResponse.statusCode)
-                    }
-                }
-            }
-        }
+        diaryOp?.editDiary(id: diaryId!, ownerId: userId!, title: addTitle.text!, content: noteTextField.text!)
     }
     
     func addNewPost(){
         
-        posts.AddNewPost(ownerId: "111", title: addTitle.text!, created_At: dataFormatter.string(from: Date()), content: noteTextField.text!) { data, respons, error in
-            do{
-                let httpResponse = respons as! HTTPURLResponse
-                DispatchQueue.main.async {
-                    if httpResponse.statusCode == 200 {
-                        print(httpResponse.statusCode)
-                    }
-                }
-            }
-        }
+        diaryOp?.addNewDiary(ownerId: userId!, title: addTitle.text!, content: noteTextField.text!)
     }
     
     // MARK: save Changes Functionality
@@ -120,10 +107,7 @@ class AddEditViewController: UIViewController {
     
     // MARK: back Changes Functionality
     @IBAction func backBtnAction(_ sender: Any) {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let loginView = storyBoard.instantiateViewController(withIdentifier: "homeDiary")
-        loginView.modalPresentationStyle = .fullScreen
-        present(loginView, animated: true)
+        dismiss(animated: true)
     }
     
 }

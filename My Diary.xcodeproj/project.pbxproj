@@ -19,7 +19,6 @@
 		3F1CA289294B0A3700577F50 /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1CA288294B0A3700577F50 /* user.swift */; };
 		3F31C731294E4A51001F225C /* posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F31C730294E4A51001F225C /* posts.swift */; };
 		3F53ADA5294B6830001ED4C4 /* signUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F53ADA4294B6830001ED4C4 /* signUpViewController.swift */; };
-		3F834741294CE3E800380DC2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F834740294CE3E800380DC2 /* HomeViewController.swift */; };
 		3F837911294DF7D500B9BDA1 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F837910294DF7D500B9BDA1 /* ForgetPasswordViewController.swift */; };
 		3FE2486B294B286D007500DB /* MyAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FE2486A294B286D007500DB /* MyAccount.storyboard */; };
 		3FE2486D294B2CC3007500DB /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE2486C294B2CC3007500DB /* MyAccountViewController.swift */; };
@@ -64,7 +63,6 @@
 		3F1CA288294B0A3700577F50 /* user.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
 		3F31C730294E4A51001F225C /* posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = posts.swift; sourceTree = "<group>"; };
 		3F53ADA4294B6830001ED4C4 /* signUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpViewController.swift; sourceTree = "<group>"; };
-		3F834740294CE3E800380DC2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3F837910294DF7D500B9BDA1 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
 		3FE2486A294B286D007500DB /* MyAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyAccount.storyboard; sourceTree = "<group>"; };
 		3FE2486C294B2CC3007500DB /* MyAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountViewController.swift; sourceTree = "<group>"; };
@@ -166,7 +164,6 @@
 			children = (
 				AFFFF1EA294C7DD800C143A5 /* DetailsViewController.swift */,
 				3F1CA259294B076600577F50 /* ViewController.swift */,
-				3F834740294CE3E800380DC2 /* HomeViewController.swift */,
 				3F53ADA4294B6830001ED4C4 /* signUpViewController.swift */,
 				3FE2486C294B2CC3007500DB /* MyAccountViewController.swift */,
 				84DBF84C294BC749005FF46F /* diaryViewController.swift */,
@@ -327,7 +324,6 @@
 				84DBF84D294BC749005FF46F /* diaryViewController.swift in Sources */,
 				3FE2486D294B2CC3007500DB /* MyAccountViewController.swift in Sources */,
 				3F837911294DF7D500B9BDA1 /* ForgetPasswordViewController.swift in Sources */,
-				3F834741294CE3E800380DC2 /* HomeViewController.swift in Sources */,
 				E46D933B294D84CB00ABD5D5 /* AddEditViewController.swift in Sources */,
 				3F1CA258294B076600577F50 /* SceneDelegate.swift in Sources */,
 				3F1CA289294B0A3700577F50 /* user.swift in Sources */,

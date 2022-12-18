@@ -7,7 +7,14 @@
 
 import UIKit
 
-class diaryViewController: UIViewController {
+protocol diaryOpreations{
+    func addNewDiary(ownerId: String, title: String,content:String)
+    func editDiary(id:String,ownerId:String,title:String,content:String)
+    func deleteDiary(diaryId:String,userID:String)
+}
+
+class diaryViewController: UIViewController,diaryOpreations {
+    
 
     //MARK: - Outlet
     @IBOutlet weak var emptyView: UIView!
@@ -22,13 +29,13 @@ class diaryViewController: UIViewController {
     var menuVC: menuViewController?
     var isMenuShown = false
     var diary: [NSDictionary] = []
-    var userID = "111"
+    var userID = String()
     
     //MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
-        getPosts()
+        getPosts(userID: userID)
         }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -61,7 +68,7 @@ class diaryViewController: UIViewController {
         }
     }
     
-    func getPosts(){
+    func getPosts(userID:String){
         posts.getAllPosts(id: userID) { data, response, error in
             do{
                 if let jsonResul = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSArray{
@@ -70,7 +77,6 @@ class diaryViewController: UIViewController {
                         let pp = post as! NSDictionary
                         self.diary.append(pp)
                     }
-                    print(jsonResul)
                     DispatchQueue.main.async {
                         self.checkisEmpty()
                         
@@ -107,17 +113,73 @@ class diaryViewController: UIViewController {
         }
     }
     
+    func addNewDiary(ownerId: String, title: String,content:String) {
+        let dataFormatter = DateFormatter()
+        dataFormatter.dateFormat = "dd MMM yyyy"
+        posts.AddNewPost(ownerId: ownerId, title: title, created_At: dataFormatter.string(from: Date()), content: content) { data, respons, error in
+            do{
+                let httpResponse = respons as! HTTPURLResponse
+                DispatchQueue.main.async {
+                    if httpResponse.statusCode == 200 {
+                        print(self.userID)
+                        self.diary.removeAll()
+                        self.getPosts(userID: self.userID)
+                        self.dismiss(animated: true)
+                        
+                    }
+                }
+            }
+        }
+    }
+    
+    func editDiary(id: String, ownerId: String, title: String,content:String) {
+        let dataFormatter = DateFormatter()
+        dataFormatter.dateFormat = "dd MMM yyyy"
+        posts.updatePost(id:id, ownerId: ownerId, title: title, created_At: dataFormatter.string(from: Date()), content: content) { data, respons, error in
+            do{
+                let httpResponse = respons as! HTTPURLResponse
+                DispatchQueue.main.async {
+                    if httpResponse.statusCode == 200 {
+                        self.diary.removeAll()
+                        self.getPosts(userID: self.userID)
+                        self.dismiss(animated: true)
+                    }
+                }
+            }
+        }
+    }
+    
+    func deleteDiary(diaryId: String,userID:String) {
+        posts.deletePost(id: diaryId) { data, response, error in
+            DispatchQueue.main.async {
+                let httpRespons = response as! HTTPURLResponse
+                if httpRespons.statusCode == 200 {
+                    self.diary.removeAll()
+                    self.getPosts(userID: userID)
+                    self.dismiss(animated: true)
+                }
+            }
+           
+
+        }
+    }
+    
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "sideMenu")
         {
             if let controller = segue.destination as? menuViewController
             {
                 controller.userEmail = userEmail
+                controller.userID = userID
+                controller.diaryOP = self 
                 self.menuVC = controller
                 self.menuVC?.menuDelegate = self
             }
         }
     }
+    
     
     //MARK: - IBAction
     @IBAction func presentMenu(_ sender: UIButton){
@@ -142,7 +204,8 @@ class diaryViewController: UIViewController {
     @IBAction func addNewDiary(_ sender: UIButton){
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let addEditVC = storyBoard.instantiateViewController(withIdentifier: "AddEdit") as! AddEditViewController
-        
+        addEditVC.userId = userID
+        addEditVC.diaryOp = self
         addEditVC.modalPresentationStyle = .fullScreen
         present(addEditVC, animated: true)
         
@@ -164,8 +227,8 @@ extension diaryViewController: UICollectionViewDelegate, UICollectionViewDataSou
         cell.viewCell.layer.cornerRadius = 20
         
         let data = diary[indexPath.row]
-        cell.titleLable.text = data["title"] as! String
-        cell.dataLabel.text = data["created_At"] as! String
+        cell.titleLable.text = "\(data["title"] as! String)"
+        cell.dataLabel.text = "\(data["created_At"] as! String)"
         
         return cell
     }
@@ -179,9 +242,12 @@ extension diaryViewController: UICollectionViewDelegate, UICollectionViewDataSou
         let addEditVC = storyBoard.instantiateViewController(withIdentifier:"AddEdit") as! AddEditViewController
         addEditVC.isEdited = true
         let data = diary[indexPath.row]
-        addEditVC.diaryId = data["_id"] as! String
-        addEditVC.addTitle.text = data["title"] as! String
-        addEditVC.noteTextField.text = data["content"] as! String
+        addEditVC.diaryId = "\(data["_id"] as! String)"
+        addEditVC.diaryTitle = "\(data["title"] as! String)"
+        addEditVC.diaryNote = "\(data["content"] as! String)"
+        addEditVC.diaryDate = "\(data["created_At"] as! String)"
+        addEditVC.userId = userID
+        addEditVC.diaryOp = self
         addEditVC.modalPresentationStyle = .fullScreen
         
         present(addEditVC, animated: true)

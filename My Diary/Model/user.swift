@@ -32,6 +32,7 @@ class users:ViewController {
     
     
     static func getUserData (email:String,completionHandler:@escaping(_ data: Data?, _ response: URLResponse?, _ error: Error?) -> Void) {
+        
         let url = URL(string:"http://localhost:4000/users/getOne/\(email)")
         
         let session = URLSession.shared

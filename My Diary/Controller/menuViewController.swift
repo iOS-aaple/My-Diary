@@ -13,6 +13,8 @@ protocol Menu{
 
 class menuViewController: UIViewController {
    var userEmail = String()
+    var userID = String()
+    var diaryOP:diaryOpreations?
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "MyAccount"{
@@ -38,9 +40,11 @@ class menuViewController: UIViewController {
     @IBAction func addNewDiary(_ sender: UIButton){
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let addEditVC = storyBoard.instantiateViewController(withIdentifier: "AddEdit") as! AddEditViewController
-        
+        addEditVC.userId = userID
+        addEditVC.diaryOp = diaryOP
         addEditVC.modalPresentationStyle = .fullScreen
         present(addEditVC, animated: true)
+        menuDelegate?.hiddeMenu()
         
     }
     

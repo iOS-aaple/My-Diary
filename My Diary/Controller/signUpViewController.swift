@@ -16,16 +16,16 @@ class signUpViewController: UIViewController {
     @IBOutlet weak var orText: UILabel!
     @IBOutlet weak var signupBtn: UIButton!
     @IBOutlet weak var userNameTextField: UITextField!
-      @IBOutlet weak var emailTextField: UITextField!
-      @IBOutlet weak var phoneNumberTextField: UITextField!
-      @IBOutlet weak var dateOfBirthTextField: UIDatePicker!
-      @IBOutlet weak var newPasswordTextField: UITextField!
-      @IBOutlet weak var reWritePasswordTextField: UITextField!
-      @IBOutlet weak var profileImage: UIImageView!
-      @IBOutlet weak var pass2Image: UIImageView!
-      @IBOutlet weak var pass1Image: UIImageView!
-      @IBOutlet weak var calenderImage: UIImageView!
-      @IBOutlet weak var emailImage: UIImageView!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var phoneNumberTextField: UITextField!
+    @IBOutlet weak var dateOfBirthTextField: UIDatePicker!
+    @IBOutlet weak var newPasswordTextField: UITextField!
+    @IBOutlet weak var reWritePasswordTextField: UITextField!
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var pass2Image: UIImageView!
+    @IBOutlet weak var pass1Image: UIImageView!
+    @IBOutlet weak var calenderImage: UIImageView!
+    @IBOutlet weak var emailImage: UIImageView!
     @IBOutlet weak var faceBookImage: UIImageView!
     @IBOutlet weak var twiterImage: UIImageView!
     @IBOutlet weak var orLabel: UILabel!
@@ -96,7 +96,7 @@ class signUpViewController: UIViewController {
                 let httpResponsr = response as! HTTPURLResponse
                 
                 DispatchQueue.main.async {
-                    self.navigationController?.popToRootViewController(animated: true)
+                    self.dismiss(animated: true)
                 }
                 
             }catch{

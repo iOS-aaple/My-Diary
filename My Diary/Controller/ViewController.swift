@@ -118,11 +118,7 @@ class ViewController: UIViewController {
                         
                         let email = self.userNameTextFilde.text!
                         self.wrongMessageLabel.isHidden = true
-                        let sroryBoard = UIStoryboard(name: "Main", bundle: nil)
-                        let homeView = sroryBoard.instantiateViewController(withIdentifier: "homeDiary") as! diaryViewController
-                        homeView.userEmail = email
-                        homeView.modalPresentationStyle = .fullScreen
-                        self.present(homeView, animated: true)
+                        self.getUserID(email: email)
                     }
                     else{
                         self.wrongMessageLabel.isHidden = false
@@ -142,6 +138,31 @@ class ViewController: UIViewController {
         let storyboard = storyboard?.instantiateViewController(withIdentifier: "ForgetPasswordView")
         storyboard?.modalPresentationStyle = .fullScreen
         present(storyboard!, animated: true)
+    }
+    
+    func getUserID(email:String){
+        var userID = String()
+        users.getUserData(email: email) { data, response, error in
+            do{
+                let user = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary
+                DispatchQueue.main.async {
+                    
+                    userID = user!["_id"] as! String
+                    print(userID)
+                    let sroryBoard = UIStoryboard(name: "Main", bundle: nil)
+                    let homeView = sroryBoard.instantiateViewController(withIdentifier: "homeDiary") as! diaryViewController
+                    homeView.userEmail = email
+                    homeView.userID = user!["_id"] as! String
+                    homeView.modalPresentationStyle = .fullScreen
+                    self.present(homeView, animated: true)
+                    
+                }
+                
+            } catch{
+                print("\(error)")
+            }
+        }
+     
     }
 }
 

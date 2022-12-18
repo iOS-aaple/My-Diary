@@ -12,6 +12,7 @@ class MyAccountViewController: UIViewController {
     var userEmail = String()
     var userInfo = NSDictionary()
     var userID = String()
+    var password = String()
     @IBOutlet weak var personInfoContainer: UIView!
     @IBOutlet weak var nameLabel: UITextField!
     @IBOutlet weak var cityLabel: UITextField!
@@ -19,13 +20,16 @@ class MyAccountViewController: UIViewController {
     @IBOutlet weak var emailLabel: UITextField!
     @IBOutlet weak var editAccountBtn: UIButton!
     
+    @IBOutlet weak var bDate: UIDatePicker!
+    @IBOutlet weak var userName: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
        personInfoContainer.layer.cornerRadius = 20
         editAccountBtn.isHidden = true
         getUserData()
-
+        
     }
     
 
@@ -50,20 +54,21 @@ class MyAccountViewController: UIViewController {
         
         print(self.userID)
         
-//        users.updateUser(id: userID, name: nameLabel.text!, email: userEmail, password: "123", phoneNumber: telLabel.text!, birthday: "12/12/1999") { data, response, error in
-//
-//            let httpResponsr = response as! HTTPURLResponse
-//            DispatchQueue.main.async {
-//                if httpResponsr.statusCode == 200 {
-//                    let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-//                    let loginView = storyBoard.instantiateViewController(withIdentifier: "LoginView")
-//                    loginView.modalPresentationStyle = .fullScreen
-//                    self.present(loginView, animated: true)
-//                }
-//
-//            }
-//
-//        }
+        users.updateUser(id: userID, name: nameLabel.text!, email: userEmail, password: password, phoneNumber: telLabel.text!, birthday:"\(bDate.date)") { data, response, error in
+
+            let httpResponsr = response as! HTTPURLResponse
+            DispatchQueue.main.async {
+                if httpResponsr.statusCode == 200 {
+                    print("SSS")
+                    let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                    let loginView = storyBoard.instantiateViewController(withIdentifier: "LoginView")
+                    loginView.modalPresentationStyle = .fullScreen
+                    self.present(loginView, animated: true)
+                }
+
+            }
+
+        }
       
         
     }
@@ -81,6 +86,11 @@ class MyAccountViewController: UIViewController {
                               self.emailLabel.text = "\(self.userInfo["email"] as! String)"
                               self.telLabel.text = "\(self.userInfo["phoneNumber"] as! String)"
                               self.nameLabel.text =  "\(self.userInfo["name"] as! String)"
+                              let dateFormater = DateFormatter()
+                              self.password = "\(self.userInfo["password"] as! String)"
+                              self.userName.text = "\(self.userInfo["name"] as! String)"
+                             // dateFormater.dateFormat = "dd/mm/yyyy"
+                             // self.bDate.date = dateFormater.date(from: self.userInfo["birthday"])
                             
                           }
           
