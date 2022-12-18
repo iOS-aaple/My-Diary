@@ -26,6 +26,10 @@ class signUpViewController: UIViewController {
       @IBOutlet weak var pass1Image: UIImageView!
       @IBOutlet weak var calenderImage: UIImageView!
       @IBOutlet weak var emailImage: UIImageView!
+    @IBOutlet weak var faceBookImage: UIImageView!
+    @IBOutlet weak var twiterImage: UIImageView!
+    @IBOutlet weak var orLabel: UILabel!
+    @IBOutlet weak var googleImage: UIImageView!
     
     
     override func viewDidLoad() {
@@ -44,8 +48,10 @@ class signUpViewController: UIViewController {
         self.emailImage.alpha = 0
         self.phoneNumberTextField.alpha = 0
         self.signupBtn.alpha = 0
-        self.orText.alpha = 0
-        self.signupOptions.alpha = 0
+        faceBookImage.alpha = 0
+        twiterImage.alpha = 0
+        orLabel.alpha = 0
+        googleImage.alpha = 0
     }
     override func viewDidAppear(_ animated: Bool) {
         animations2()
@@ -66,8 +72,10 @@ class signUpViewController: UIViewController {
             self.emailImage.alpha = 1
             self.phoneNumberTextField.alpha = 1
             self.signupBtn.alpha = 1
-            self.orText.alpha = 1
-            self.signupOptions.alpha = 1
+            self.faceBookImage.alpha = 1
+            self.twiterImage.alpha = 1
+            self.orLabel.alpha = 1
+            self.googleImage.alpha = 1
             
         }
         

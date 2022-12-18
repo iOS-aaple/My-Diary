@@ -15,13 +15,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bloom" translatesAutoresizingMaskIntoConstraints="NO" id="qzj-bc-OWN">
-                                <rect key="frame" x="75" y="358" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bloomHom" translatesAutoresizingMaskIntoConstraints="NO" id="qzj-bc-OWN">
+                                <rect key="frame" x="70" y="297" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="gEt-Wu-AlR"/>
+                                    <constraint firstAttribute="height" constant="250" id="uPY-kg-obG"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.92844635249999996" green="0.866753459" blue="0.81375676389999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qzj-bc-OWN" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="GgC-nR-W8m"/>
+                            <constraint firstItem="qzj-bc-OWN" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="psI-0A-kNi"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -30,6 +37,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bloom" width="1600" height="1600"/>
+        <image name="bloomHom" width="166.66667175292969" height="166.66667175292969"/>
     </resources>
 </document>

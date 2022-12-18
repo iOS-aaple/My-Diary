@@ -10,21 +10,20 @@ import UIKit
 class ViewController: UIViewController {
     
     
-    //    var imageViewHome: UIImageView = {
-    //        let imageViewHome = UIImageView(frame: CGRect(x:  0, y: 0, width: 150, height: 150))
-    //        imageViewHome.image = UIImage(named: "bloom")
-    //        return imageViewHome
-    //    }()
+        var imageViewHome: UIImageView = {
+            let imageViewHome = UIImageView(frame: CGRect(x:  0, y: 0, width: 250, height: 250))
+            imageViewHome.image = UIImage(named: "bloomHom")
+            return imageViewHome
+        }()
     
     
     
     
     // MARK: - @IBOutlets
     
-    @IBOutlet weak var orText: UIImageView!
+   
     @IBOutlet weak var forgetPasswordBtn: UIButton!
     @IBOutlet weak var helloText: UILabel!
-    @IBOutlet weak var signinOption: UIStackView!
     @IBOutlet weak var wrongMessageLabel: UILabel!
     @IBOutlet weak var userNameTextFilde: UITextField!
     @IBOutlet weak var passwordTextFilde: UITextField!
@@ -32,12 +31,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var passwordImage: UIImageView!
     @IBOutlet weak var signUpOutlet: UIButton!
     @IBOutlet weak var loginButtonOutlet: UIButton!
-    
-    
+    @IBOutlet weak var faceBookImage: UIImageView!
+    @IBOutlet weak var twiterImage: UIImageView!
+    @IBOutlet weak var orLabel: UILabel!
+    @IBOutlet weak var googleImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //view.addSubview(imageViewHome)
+        view.addSubview(imageViewHome)
+        animationStart()
         self.userNameTextFilde.alpha = 0
         self.passwordTextFilde.alpha = 0
         self.loginButtonOutlet.alpha = 0
@@ -46,16 +48,18 @@ class ViewController: UIViewController {
         self.userImage.alpha = 0
         self.forgetPasswordBtn.alpha = 0
         self.helloText.alpha = 0
-        self.orText.alpha = 0
-        self.signinOption.alpha = 0
+        faceBookImage.alpha = 0
+        twiterImage.alpha = 0
+        orLabel.alpha = 0
+        googleImage.alpha = 0
         
         wrongMessageLabel.isHidden = true
         
     }
-    //    override func viewDidLayoutSubviews() {
-    //        super.viewDidLoad()
-    //        imageViewHome.center = view.center
-    //    }
+        override func viewDidLayoutSubviews() {
+            super.viewDidLoad()
+            imageViewHome.center = view.center
+        }
     override func viewDidAppear(_ animated: Bool) {
         animations()
     }
@@ -70,28 +74,36 @@ class ViewController: UIViewController {
             self.userImage.alpha = 1
             self.forgetPasswordBtn.alpha = 1
             self.helloText.alpha = 1
-            self.orText.alpha = 1
-            self.signinOption.alpha = 1
+            self.faceBookImage.alpha = 1
+            self.twiterImage.alpha = 1
+            self.orLabel.alpha = 1
+            self.googleImage.alpha = 1
         }
-        
-        //        UIView.animate(withDuration: 1, animations: {
-        //            let size = self.view.frame.size.width * 1.5
-        //            let diffx = size - self.view.frame.size.width
-        //            let diffy =  self.view.frame.size.height - size
-        //
-        //
-        //            self.imageViewHome = CGRect(x: -(diffx/2), y: diffy/2, width: size, height: size)
-        //
-        //
-        //
-        //
-        //        })
         
         
         
     }
+    func animationStart(){
+        
+                UIView.animate(withDuration: 1, animations: {
+                    let size = self.view.frame.size.width * 1.5
+                    let diffx = size - self.view.frame.size.width
+                    let diffy =  self.view.frame.size.height - size
+        
+        
+                    self.imageViewHome.frame = CGRect(x: -(diffx/2), y: diffy/2, width: size, height: size)
+                    self.imageViewHome.alpha = 0
+        })
+        
+    }
     
-    @IBAction func singUpButton(_ sender: Any) {
+    @IBAction func singUpButton(_ sender: UIButton) {
+        
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let singUpVC = storyBoard.instantiateViewController(withIdentifier: "sinUpView") as! signUpViewController
+        
+        singUpVC.modalPresentationStyle = .fullScreen
+        present(singUpVC, animated: true)
     }
     
     

@@ -23,6 +23,7 @@ class AddEditViewController: UIViewController {
     @IBOutlet weak var editbutton: UIButton! // content edit
     
     @IBOutlet weak var deleteDiary: UIButton!
+    @IBOutlet weak var dateLabel: UILabel!
     
     @IBOutlet weak var backBtn: UIButton!
     
@@ -53,6 +54,8 @@ class AddEditViewController: UIViewController {
         
         // MARK:
         dataFormatter.dateFormat = "dd MMM yyyy"
+        datePicker.isHidden = true
+        dateLabel.isHidden = true
         
 
     }

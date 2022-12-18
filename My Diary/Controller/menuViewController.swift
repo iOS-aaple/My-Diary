@@ -35,7 +35,14 @@ class menuViewController: UIViewController {
         menuDelegate?.hiddeMenu()
     }
     
-    
+    @IBAction func addNewDiary(_ sender: UIButton){
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let addEditVC = storyBoard.instantiateViewController(withIdentifier: "AddEdit") as! AddEditViewController
+        
+        addEditVC.modalPresentationStyle = .fullScreen
+        present(addEditVC, animated: true)
+        
+    }
     
     @IBAction func LogOutButton(_ sender: UIButton){
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
@@ -43,5 +50,6 @@ class menuViewController: UIViewController {
         loginView.modalPresentationStyle = .fullScreen
         present(loginView, animated: true)
     }
+    
 
 }

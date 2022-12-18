@@ -16,7 +16,7 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUI()
-       
+        
     }
     override func viewDidAppear(_ animated: Bool) {
         animateView()
