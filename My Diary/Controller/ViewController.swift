@@ -97,7 +97,13 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func singUpButton(_ sender: Any) {
+    @IBAction func singUpButton(_ sender: UIButton) {
+        
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let singUpVC = storyBoard.instantiateViewController(withIdentifier: "sinUpView") as! signUpViewController
+        
+        singUpVC.modalPresentationStyle = .fullScreen
+        present(singUpVC, animated: true)
     }
     
     

@@ -28,7 +28,7 @@ class diaryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
-       // getPosts()
+        getPosts()
         }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -48,8 +48,6 @@ class diaryViewController: UIViewController {
         
         checkisEmpty()
      
-        
-        
     }
     
     func checkisEmpty(){
@@ -63,17 +61,30 @@ class diaryViewController: UIViewController {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "sideMenu")
-        {
-            if let controller = segue.destination as? menuViewController
-            {
-                controller.userEmail = userEmail
-                self.menuVC = controller
-                self.menuVC?.menuDelegate = self
+    func getPosts(){
+        posts.getAllPosts(id: userID) { data, response, error in
+            do{
+                if let jsonResul = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSArray{
+                   
+                    for post in jsonResul {
+                        let pp = post as! NSDictionary
+                        self.diary.append(pp)
+                    }
+                    print(jsonResul)
+                    DispatchQueue.main.async {
+                        self.checkisEmpty()
+                        
+                        self.collectionView.reloadData()
+                    }
+                }
+                
+                
+            }catch {
+                print("\(error)")
             }
         }
     }
+    
     
     @objc func tappingToBackView(){
        hiddeMenuView()
@@ -92,6 +103,18 @@ class diaryViewController: UIViewController {
             } completion: { (status) in
                 self.backgroundView.isHidden = true
                 self.isMenuShown = false
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "sideMenu")
+        {
+            if let controller = segue.destination as? menuViewController
+            {
+                controller.userEmail = userEmail
+                self.menuVC = controller
+                self.menuVC?.menuDelegate = self
             }
         }
     }
@@ -116,30 +139,15 @@ class diaryViewController: UIViewController {
         self.backgroundView.isHidden = false
     }
     
-    func getPosts(){
-        posts.getAllPosts(id: userID) { data, response, error in
-            do{
-                if let jsonResul = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSArray{
-                   
-                    for post in jsonResul {
-                        let pp = post as! NSDictionary
-                        self.diary.append(pp)
-                    }
-                    print(jsonResul)
-                    DispatchQueue.main.async {
-                        self.checkisEmpty()
-                        
-                        self.collectionView.reloadData()
-                    }
-                }
-                
-                
-                
-            }catch {
-                print("\(error)")
-            }
-        }
+    @IBAction func addNewDiary(_ sender: UIButton){
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let addEditVC = storyBoard.instantiateViewController(withIdentifier: "AddEdit") as! AddEditViewController
+        
+        addEditVC.modalPresentationStyle = .fullScreen
+        present(addEditVC, animated: true)
+        
     }
+    
     
    
 
@@ -154,6 +162,7 @@ extension diaryViewController: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "diaryCell", for: indexPath) as! diaryCell
         cell.viewCell.layer.cornerRadius = 20
+        
         let data = diary[indexPath.row]
         cell.titleLable.text = data["title"] as! String
         cell.dataLabel.text = data["created_At"] as! String
